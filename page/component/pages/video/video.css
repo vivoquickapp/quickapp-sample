@@ -1,0 +1,12 @@
+.cells-column {
+    display: flex;
+    align-items: center;
+}
+
+.radio {
+    margin-right: 20rpx;
+}
+
+.main-section {
+    margin-bottom: 20rpx;
+}

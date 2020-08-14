@@ -1,0 +1,83 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'chooseInvoiceTitle'}}" />
+
+  <view class="main-body">
+    <form>
+      <view class="main-section">
+        <view class="box-rows no-margin-top">
+          <view class="box-row box-row-input">
+            <view class="box-row-hd">
+              <view class="box-label">抬头类型</view>
+            </view>
+            <view class="box-row-bd">
+              {{ type !== '' ? (type === '0' ? '单位' : '个人') : '' }}
+            </view>
+          </view>
+
+          <view class="box-row box-row-input">
+            <view class="box-row-hd">
+              <view class="box-label">抬头名称</view>
+            </view>
+            <view class="box-row-bd">
+              {{ title }}
+            </view>
+          </view>
+
+          <view class="box-row box-row-input">
+            <view class="box-row-hd">
+              <view class="box-label">抬头税号</view>
+            </view>
+            <view class="box-row-bd">
+              {{taxNumber}}
+            </view>
+          </view>
+
+          <view class="box-row box-row-input">
+            <view class="box-row-hd">
+              <view class="box-label">单位地址</view>
+            </view>
+            <view class="box-row-bd">
+              {{companyAddress}}
+            </view>
+          </view>
+
+          <view class="box-row box-row-input">
+            <view class="box-row-hd">
+              <view class="box-label">手机号码</view>
+            </view>
+            <view class="box-row-bd">
+              {{telephone}}
+            </view>
+          </view>
+
+          <view class="box-row box-row-input">
+            <view class="box-row-hd">
+              <view class="box-label">银行名称</view>
+            </view>
+            <view class="box-row-bd">
+              {{bankName}}
+            </view>
+          </view>
+
+          <view class="box-row box-row-input">
+            <view class="box-row-hd">
+              <view class="box-label">银行账号</view>
+            </view>
+            <view class="box-row-bd">
+              {{bankAccount}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </form>
+
+    <view class="btn-wrapper">
+      <button type="primary" bindtap="chooseInvoiceTitle">获取发票抬头</button>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

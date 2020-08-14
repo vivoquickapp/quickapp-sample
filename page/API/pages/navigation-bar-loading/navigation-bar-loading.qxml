@@ -1,0 +1,15 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'navigationBarLoading'}}" />
+
+  <view class="main-body">
+    <view class="btn-wrapper">
+      <button type="primary" bindtap="showNavigationBarLoading">显示加载动画</button>
+      <button bindtap="hideNavigationBarLoading">隐藏加载动画</button>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

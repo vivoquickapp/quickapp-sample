@@ -1,0 +1,41 @@
+<set-tab-bar qa:if="{{isTabBarMod}}" bindunmount="exitTabBarMod"></set-tab-bar>
+<view qa:else class="home">
+  <view class="home-header">
+    <image class="home-logo" src="resources/kind/logo.png"></image>
+    <view class="home-desc">接口</view>
+  </view>
+  <view class="home-body">
+    <view class="section-list">
+      <block qa:for="{{list}}">
+        <view class="section-list-item">
+          <view
+            id="{{item.id}}"
+            class="section-list-item-hd {{item.open ? 'section-list-item-hd-show' : ''}}"
+            bindtap="toggleSection"
+          >
+            <view class="section-list-text">{{item.name}}</view>
+            <image class="section-list-img" src="resources/kind/{{item.id}}.png"></image>
+          </view>
+          <view class="section-list-item-bd {{item.open ? 'section-list-item-bd-show' : ''}}">
+            <view class="link-box {{item.open ? 'link-box-show' : ''}}">
+              <block qa:for="{{item.pages}}" qa:for-item="page">
+                <navigator
+                  url="pages/{{page.url}}"
+                  class="link"
+                  qa:if="{{page.url !== '@set-tab-bar'}}"
+                >
+                  <view class="link-text">{{page.zh}}</view>
+                  <view class="link-arrow"></view>
+                </navigator>
+                <view qa:else class="link" bindtap="enterTabBarMod">
+                  <view class="link-text">{{page.zh}}</view>
+                  <view class="link-arrow"></view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<view class="box">
+  <view class="text-center">behavior 测试</view>
+  <view>name: {{name}}</view>
+  <view>age: {{age}}</view>
+  <view>value: {{value}}</view>
+  <view>description: {{description}}</view>
+  <view>propA: {{propA}}</view>
+  <view>propB: {{propB}}</view>
+  <view>information: {{information.id}}, {{information.time}},{{information.name}}</view>
+  <button bind:tap="changeName">changeName</button>
+  <button bind:tap="changeAge">changeAge</button>
+</view>

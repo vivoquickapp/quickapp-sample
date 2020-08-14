@@ -1,0 +1,15 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'modal'}}" />
+
+  <view class="main-body">
+    <view class="btn-wrapper">
+      <button type="default" bindtap="openModal">带标题的弹窗</button>
+      <button type="default" bindtap="openModalNoTitle">无标题的弹窗</button>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

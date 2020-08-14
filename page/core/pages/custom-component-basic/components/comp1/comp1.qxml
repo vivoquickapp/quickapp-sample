@@ -1,0 +1,29 @@
+<view class="box">
+  <view class="h1">组件实例属性测试</view>
+  <view>data.name: {{name}}</view>
+  <view>is: {{is}}</view>
+  <view>id: {{id}}</view>
+  <view>dataset: {{dataset}}</view>
+  <view>this.data === this.properties: {{dataFlag}}</view>
+  <view>hasBehavior: {{hasBehavior}}</view>
+  <view class="h1">slot 测试:</view>
+  <slot name="header"></slot>
+  <slot></slot>
+  <slot name="footer"></slot>
+  <view class="h1">接收属性测试:</view>
+  <view>
+    <view>propA: {{propA}}</view>
+    <view>propB: {{propB}}</view>
+  </view>
+  <view class="h1">自定义组件接口测试</view>
+  <button bindtap="testTriggerEvent">triggerEvent</button>
+  <button bindtap="testSelectQuery">createSelectorQuery</button>
+  <button bindtap="testSelectComponent">selectComponent</button>
+  <!-- <button bindtap="getRelationNodes">getRelationNodes(不支持)</button> -->
+  <button bindtap="testGroupSetData">groupSetData</button>
+  <!-- <button bindtap="getTabBar">getTabBar&getPageId（不支持）</button> -->
+
+  <view class="wrapper">
+    <life-comp1 id="lifeComp1" class="lifeComp1 other" style="display: none"></life-comp1>
+  </view>
+</view>

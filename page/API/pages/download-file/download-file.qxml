@@ -1,0 +1,17 @@
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'downloadFile'}}" />
+
+  <view class="page-body">
+    <view class="main-section">
+      <image wx:if="{{imageSrc}}" src="{{imageSrc}}" mode="center" />
+      <view class="btn-wrapper">
+        <button bindtap="download" type="primary">下载图片</button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

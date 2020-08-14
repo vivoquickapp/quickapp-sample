@@ -1,0 +1,21 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'event'}}" />
+
+  <view class="main-body">
+    <button bind:touchstart="handleEvent">touchstart</button>
+    <button bind:touchmove="handleEvent">touchmove</button>
+    <button bind:touchend="handleEvent">touchend</button>
+    <button bind:touchcancel="handleEvent">touchcancel</button>
+    <button bind:tap="handleEvent">tap</button>
+    <button bind:longpress="handleEvent">longpress</button>
+    <button bind:longtap="handleEvent">longtap</button>
+    <view class="text-center">
+      事件参数测试 log: {{log}}
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

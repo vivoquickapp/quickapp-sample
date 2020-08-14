@@ -1,0 +1,17 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'DeviceMotion', desc: '设备方向 '}}" />
+
+  <view class="main-body">
+    <view class="main-section main-section_center">
+      <text>alpha={{gAlpha}} beta={{gBeta}} gamma={{gGamma}}</text>
+      <view class="controls">
+        <button bindtap="toggle">{{ isListen ? '关闭设备方向监听' : '开启设备方向监听'}}</button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

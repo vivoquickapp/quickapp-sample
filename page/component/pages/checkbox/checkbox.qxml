@@ -1,0 +1,40 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'checkbox'}}" />
+
+  <view class="main-body">
+    <view class="main-section main-section-gap">
+      <view class="main-section-title">默认样式</view>
+      <label class="checkbox"> <checkbox value="cb" checked="true" />选中 </label>
+      <label class="checkbox"> <checkbox value="cb" />未选中 </label>
+      <view class="main-section-title">定制样式</view>
+      <label class="checkbox"> <checkbox value="cb2" color="#f00" checked="true" />选中 </label>
+      <view class="main-section-title"
+        >动态改变color: <text style="color: {{checkboxColor}}">{{checkboxColor}}</text></view
+      >
+      <label class="checkbox">
+        <checkbox value="cb2" color="{{checkboxColor}}" checked="true" />选中
+      </label>
+      <button bindtap="changeColor" type="primary">改变 样式</button>
+    </view>
+
+    <view class="main-section">
+      <view class="main-section-title">推荐展示样式</view>
+      <view>
+        <checkbox-group bindchange="checkboxChange">
+          <label class="checkbox-label" qa:for="{{items}}" qa:key="value">
+            <view>
+              <checkbox value="{{item.value}}" checked="{{item.checked}}" />
+            </view>
+            <view>{{item.name}}</view>
+          </label>
+        </checkbox-group>
+      </view>
+    </view>
+
+  </view>
+
+  <template is="foot" />
+</view>

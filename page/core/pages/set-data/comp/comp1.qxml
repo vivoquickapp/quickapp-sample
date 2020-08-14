@@ -1,0 +1,1 @@
+<view>obj.text: {{obj.text}}</view>

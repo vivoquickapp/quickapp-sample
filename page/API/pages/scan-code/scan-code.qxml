@@ -1,0 +1,25 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'scanCode'}}" />
+
+  <view class="main-body">
+    <view class="box-rows__title">扫码结果</view>
+    <view class="box-rows no-margin-top">
+      <view class="box-row">
+        <view class="box-row-bd">{{result}}</view>
+      </view>
+    </view>
+    <view class="box-rows no-margin-top">
+      <view class="box-row">
+        <view class="box-row-bd">{{scanType}}   {{scanTypeMapping[scanType]}}</view>
+      </view>
+    </view>
+    <view class="btn-wrapper">
+      <button type="primary" bindtap="scanCode">扫一扫</button>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

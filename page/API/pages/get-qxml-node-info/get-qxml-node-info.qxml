@@ -1,0 +1,27 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'createSelectorQuery'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <movable-area>
+        <movable-view class="target" direction="all" bindchange="getNodeInfo">
+          可拖动
+        </movable-view>
+      </movable-area>
+    </view>
+
+    <view class="main-section">
+      <view class="list">
+        <view qa:for="{{ list }}" qa:key="key">
+          <text class="key">{{ item.key }}</text>
+          <text class="value">{{ item.val }}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

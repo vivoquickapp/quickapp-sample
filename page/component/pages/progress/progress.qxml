@@ -1,0 +1,57 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'progress'}}"/>
+
+  <view class="main-body">
+    <view class="main-section main-section-gap">
+      <view class="section section_gap">
+        <text class="section__title">动态设置 percent</text>
+        <view class="body-view">
+          <slider bindchange="percentChange" value="{{percent}}"  active-color="#ff0000"/>
+        </view>
+      </view>
+      <view class="progress-box">
+        <progress percent="{{percent}}" show-info stroke-width="3"/>
+      </view>
+
+
+
+      <view>show-info 显示右侧百分比信息</view>
+      <view class="progress-box">
+        <progress percent="20" show-info stroke-width="3"/>
+      </view>
+      <view>show-info 右侧百分比字体20px</view>
+      <view class="progress-box">
+        <progress percent="20" show-info stroke-width="3" font-size="20px"/>
+      </view>
+
+      <view>右侧图标自定义</view>
+      <view class="progress-box">
+        <progress percent="40" stroke-width="3" />
+        <icon class="progress-cancel" type="cancel"></icon>
+      </view>
+
+      <view>active 进度条从左往右的动画</view>
+      <view class="progress-box">
+        <progress percent="60" active stroke-width="3" />
+      </view>
+
+      <view>color 蓝色</view>
+      <view class="progress-box">
+        <progress percent="80" color="#10AEFF" stroke-width="3" />
+      </view>
+      <view>active-color 蓝色</view>
+      <view class="progress-box">
+        <progress percent="80" active-color="#10AEFF" stroke-width="3" />
+      </view>
+      <view>background-color 黑色</view>
+      <view class="progress-box">
+        <progress percent="20" background-color="#000000" stroke-width="3" />
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

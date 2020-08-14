@@ -1,0 +1,60 @@
+module.exports.name = 'test-qjs'
+
+module.exports.printName = function() {
+  return module.exports.name
+}
+
+module.exports.selectComponent = function(e, ownerInst) {
+  const component = ownerInst.selectComponent('.btn-0')
+  console.log('[test-qjs]:selectComponent:' + typeof component)
+}
+
+module.exports.selectAllComponents = function(e, ownerInst) {
+  const components = ownerInst.selectAllComponents('.btn')
+  console.log('[test-qjs]:selectAllComponents:' + components.length)
+}
+
+module.exports.setStyle = function(e, ownerInst) {
+  e.instance.setStyle({
+    color: 'red',
+    fontSize: '40rpx'
+  })
+}
+
+module.exports.addClass = function(e, ownerInst) {
+  e.instance.addClass('bold')
+  console.log('[test-qjs]:addClass-hasClass:' + e.instance.hasClass('bold'))
+}
+
+module.exports.removeClass = function(e, ownerInst) {
+  const components = ownerInst.selectAllComponents('.btn')
+  components.forEach((item) => {
+    item.removeClass('bold')
+  })
+  console.log('[test-qjs]:removeClass-hasClass:' + e.instance.hasClass('bold'))
+}
+
+module.exports.getDataset = function(e, ownerInst) {
+  console.log('[test-qjs]:getDataset:' + JSON.stringify(e.instance.getDataset()))
+}
+
+module.exports.callMethod = function(e, ownerInst) {
+  ownerInst.callMethod('testCallMethod', { a: 1, b: 'b', fn: () => {} })
+}
+
+module.exports.requestAnimationFrame = function(e, ownerInst) {
+  ownerInst.requestAnimationFrame(() => {
+    console.log('[test-qjs]:requestAnimationFrame')
+  })
+}
+
+module.exports.getState = function(e, ownerInst) {
+  const state = e.instance.getState()
+  state.counter = state.counter || 0
+  state.counter++
+  console.log('[test-qjs]:getState:' + state.counter)
+}
+
+module.exports.triggerEvent = function(e, ownerInst) {
+  ownerInst.triggerEvent('customevent', {a: 1, b: 'b' })
+}

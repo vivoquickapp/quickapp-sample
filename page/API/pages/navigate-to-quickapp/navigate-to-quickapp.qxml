@@ -1,0 +1,15 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'navigateToQuickapp'}}" />
+
+  <view class="main-body">
+    <view class="main-body-info">
+      <button type="primary" bind:tap="navigateToQuickapp">navigateToQuickapp</button>
+      <button type="primary" bind:tap="navigateToQuickapp2">navigateToQuickapp with path</button>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

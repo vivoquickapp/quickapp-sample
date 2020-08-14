@@ -1,0 +1,43 @@
+button{
+  margin: 40rpx 0;
+}
+.text-box{
+  margin-bottom: 70rpx;
+  padding: 40rpx 0;
+  display: flex;
+  min-height: 300rpx;
+  background-color: #FFFFFF;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 30rpx;
+  color: #353535;
+  line-height: 2em;
+}
+.text-box2{
+  margin-bottom: 70rpx;
+  padding: 20rpx 10rpx;
+  min-height: 300rpx;
+  background-color: #FFFFFF;
+  flex-direction: column;
+  font-size: 30rpx;
+  color: #353535;
+  line-height: 2em;
+}
+.text-a {color: #f00}
+.colum-flex {display: flex;flex-direction: column;}
+
+.ellipsis-replace-text{
+  display: -webkit-box;
+  width: 100%;
+  margin-bottom: 30rpx;
+  font-size: 30rpx;
+  color: #212121;
+  line-height: 1.5;
+  letter-spacing: 2rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: pre-wrap;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

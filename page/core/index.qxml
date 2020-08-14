@@ -1,0 +1,32 @@
+<view class="home">
+  <view class="home-header">
+    <image class="home-logo" src="resources/kind/logo.png"></image>
+    <view class="home-desc">框架</view>
+  </view>
+  <view class="home-body">
+    <view class="section-list">
+      <block qa:for="{{list}}">
+        <view class="section-list-item">
+          <view
+            id="{{item.id}}"
+            class="section-list-item-hd {{item.open ? 'section-list-item-hd-show' : ''}}"
+            bindtap="toggleSection"
+          >
+            <view class="section-list-text">{{item.name}}</view>
+            <view qa:if="{{item.url}}" class="link-arrow"></view>
+          </view>
+          <view class="section-list-item-bd {{item.open ? 'section-list-item-bd-show' : ''}}">
+            <view class="link-box {{item.open ? 'link-box-show' : ''}}">
+              <block qa:for="{{item.pages}}" qa:for-item="page">
+                <navigator url="pages/{{page.url}}" class="link">
+                  <view class="link-text">{{page.zh}}</view>
+                  <view class="link-arrow"></view>
+                </navigator>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

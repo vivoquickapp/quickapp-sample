@@ -1,0 +1,28 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'toast'}}" />
+
+  <view class="main-body">
+    <view class="btn-wrapper">
+      <view class="body-view">
+        <button type="default" bindtap="toastDefault">弹出默认toast</button>
+      </view>
+      <view class="body-view">
+        <button type="default" bindtap="toastDuration">弹出设置duration的toast</button>
+      </view>
+      <view class="body-view">
+        <button type="default" bindtap="toastLoading">弹出显示loading的toast</button>
+      </view>
+      <view class="body-view">
+        <button type="default" bindtap="tapToastWithSpecialChar">弹出 toast 携带特殊字符</button>
+      </view>
+      <view class="body-view">
+        <button type="default" bindtap="hideToast">隐藏toast</button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

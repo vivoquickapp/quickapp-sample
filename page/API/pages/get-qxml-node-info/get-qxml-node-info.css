@@ -1,0 +1,46 @@
+movable-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100rpx;
+  width: 100rpx;
+  background: #1AAD19;
+  color: #fff;  
+}
+
+movable-area {
+  height: 400rpx;
+  width: 400rpx;
+  background-color: #ccc;
+  overflow: hidden;
+}
+
+.main-section {
+  display: flex;
+  justify-content: center;
+}
+
+.main-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list {
+  width: 400rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction:column;
+  align-items:center;
+}
+
+.key {
+  display: inline-block;
+  width: 150rpx;
+  font-weight: bold;
+}
+
+.value {
+  display: inline-block;
+  width: 100rpx;
+}

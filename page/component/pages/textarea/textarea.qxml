@@ -1,0 +1,132 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'textarea'}}" />
+
+  <view class="main-body textarea-page">
+
+    <view class="wrapper">
+      <textarea class="textarea-1" value="{{styleValue1}}">
+      </textarea>
+      <textarea class="textarea-2" value="{{styleValue2}}">
+      </textarea>
+    </view>
+
+    <view class="operating-log">触发 bindblur ：{{ bindblur }}</view>
+    <view class="operating-log">触发 bindlinechange ：{{ bindlinechange }}</view>
+    <view class="operating-log">触发 bindfocus ：{{ bindfocus }}</view>
+    <view class="operating-log">触发 bindinput ：{{ bindinput }}</view>
+    <view class="operating-log">触发 bindconfirm ：{{ bindconfirm}}</view>
+
+      <view class="main-section">
+        <view class="main-section-title">输入区域高度自适应，不会出现滚动条</view>
+        <view class="textarea-wrp">
+          <textarea
+            id="textname"
+            style="line-height: {{controlVal.lineHeight}}"
+            class="textarea"
+            value="{{value}}"
+            placeholder="{{controlVal.placeholder}}" 
+            placeholder-style="{{controlVal.placeholderStyle}}"
+            placeholder-class="{{controlVal.placeholderClass}}"
+            disabled="{{controlVal.disabled}}"
+            maxlength="{{controlVal.maxlength}}" 
+            cursor-spacing="{{controlVal.cursorSpacing}}"
+            focus="{{controlVal.focus}}"
+            auto-height="{{controlVal.autoHeight}}"
+            cursor="{{controlVal.cursor}}"
+            show-confirm-bar="{{controlVal.showConfirmBar}}"
+            selection-start="{{controlVal.selectionStart}}"
+            selection-end="{{controlVal.selectionEnd}}"
+            adjust-position="{{controlVal.adjustPosition}}"
+
+            bindblur="bindTextAreaBlur"
+            bindlinechange="bindlinechange"
+            bindfocus="bindFocus"
+            bindinput="bindInput"
+            bindconfirm="bindComfirm">
+          </textarea>
+        </view>
+      </view>
+
+      <button bindtap="clearTextArea">点击此button清除textarea中的值</button>
+    <view class="control-section">
+      <view>可输入正确的属性值，修改下面各项属性</view>
+
+      <view class="cells-column">
+         <text>placeholder:</text>
+        <input  value="{{controlVal.placeholder}}" bindinput="controlInput" data-name="placeholder" />
+      </view>
+
+      <view class="cells-column">
+         <text>placeholder-style:</text>
+        <input  value="{{controlVal.placeholderStyle}}" bindinput="controlInput" data-name="placeholderStyle" />
+      </view>
+
+      <radio-group bindchange="placeholderClassChange">
+        <view>placeholder-class</view>
+        <label class="radio"> <radio value="p-class" checked="{{true}}"/>p-class </label>
+        <label class="radio"> <radio value="test"/>test </label>
+      </radio-group>
+
+      <radio-group bindchange="disabledChange">
+        <view>disabled</view>
+        <label class="radio"> <radio value="true"/>true </label>
+        <label class="radio"> <radio value="false" checked="{{true}}"/>false </label>
+      </radio-group>
+
+      <view class="cells-column">
+        <text>maxlength:</text>
+        <input value="{{controlVal.maxlength}}" bindinput="controlInput" data-name="maxlength" />
+      </view>
+
+      <view class="cells-column">
+        <text>cursor-spacing:</text>
+        <input value="{{controlVal.cursorSpacing}}" bindinput="controlInput" data-name="cursorSpacing" />
+      </view>
+
+      <radio-group bindchange="focusChange">
+        <view>focus</view>
+        <label class="radio"> <radio value="true" checked="{{controlVal.focus}}"/>true </label>
+        <label class="radio"> <radio value="false" checked="{{!controlVal.focus}}"/>false </label>
+      </radio-group>
+
+      <radio-group bindchange="autoHeightChange">
+        <view>auto-height</view>
+        <label class="radio"> <radio value="true"/>true </label>
+        <label class="radio"> <radio value="false" checked="{{true}}"/>false </label>
+      </radio-group>
+
+      <radio-group bindchange="showConfirmBarChange">
+        <view>show-confirm-bar</view>
+        <label class="radio"> <radio value="true" checked="{{true}}"/>true </label>
+        <label class="radio"> <radio value="false" />false </label>
+      </radio-group>
+
+      <view class="cells-column">
+        <text>cursor:</text>
+        <input  value="{{controlVal.cursor}}" bindinput="controlInput" data-name="cursor" />
+      </view>
+
+      <view class="cells-column">
+        <text>selection-start:</text>
+        <input value="{{controlVal.selectionStart}}" bindinput="controlInput" data-name="selectionStart" />
+      </view>
+
+      <view class="cells-column">
+        <text>selection-end:</text>
+        <input value="{{controlVal.selectionEnd}}" bindinput="controlInput" data-name="selectionEnd" />
+      </view>
+
+      <radio-group bindchange="adjustPositionChange">
+        <view>adjust-position</view>
+        <label class="radio"> <radio value="true" checked="{{true}}"/>true </label>
+        <label class="radio"> <radio value="false"/>false </label>
+      </radio-group>
+
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

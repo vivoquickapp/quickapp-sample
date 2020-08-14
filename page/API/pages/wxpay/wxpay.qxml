@@ -1,0 +1,22 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'WxPay'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <view class="main-body-info">
+        <view class="main-body-title">WxPay</view>
+        <text class="main-body-text">当前支付方式 ：{{payType}}</text>
+      </view>
+      <view class="btn-wrapper">
+        <button type="primary"  bindtap="getPayType">获取支付方式</button>
+        <button type="primary"  bindtap="wxpay">发起支付</button>
+        <button type="primary"  bindtap="wxpayWithRefer">微信支付(直接设置refer)</button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

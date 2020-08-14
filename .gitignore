@@ -1,0 +1,32 @@
+.DS_Store
+node_modules
+dist
+output
+build
+typings/*
+
+# local env files
+.env.local
+.env.*.local
+.cache
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.ide
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+qa-typings
+
+# Test
+test/coverage/
+
+.quickapp/*
+!.quickapp/sign/

@@ -1,0 +1,5 @@
+<web-view 
+  src="https://www.vivo.com/"
+  bindload="bindload"
+  binderror="binderror"
+></web-view>

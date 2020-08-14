@@ -1,0 +1,34 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+<view class="container">
+  <template is="head" data="{{title: 'saveFile'}}" />
+  <view class="main-body">
+    <view class="result-text">{{result}}</view>
+    <view class="main-section">
+      <view class="btn-wrapper">
+        <button bindtap="chooseImage">选择图片</button>
+        <button disabled="{{!tempFilePath}}" bindtap="saveFile">保存文件</button>
+        <button disabled="{{!tempFilePath}}" bindtap="getFileInfo">获取临时文件信息</button>
+        <button disabled="{{!savedFilePath}}" bindtap="getSavedFileList">获取已保存文件列表</button>
+        <button disabled="{{!savedFilePath}}" bindtap="getSavedFileInfo">获取已保存文件信息</button>
+        <button disabled="{{!savedFilePath}}" bindtap="removeFile">删除已保存文件</button>
+      </view>
+    </view>
+    <view class="box-rows no-margin-top">
+      <view class="box-row box-row-input">
+        <view class="box-row-hd">
+          <view class="box-label">选取文件</view>
+        </view>
+        <view class="box-row-bd">
+          <picker mode="selector" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="picker">{{array[index]}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class="btn-wrapper">
+      <button disabled="{{!savedFilePath}}" bindtap="openDocument">打开文件</button>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

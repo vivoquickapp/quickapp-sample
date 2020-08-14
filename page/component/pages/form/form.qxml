@@ -1,0 +1,58 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'form'}}" />
+
+  <view class="main-body">
+    <form catchsubmit="formSubmit" catchreset="formReset">
+      <view class="main-section main-section-gap">
+        <view class="main-section-title">switch</view>
+        <switch name="switch" />
+      </view>
+
+      <view class="main-section main-section-gap">
+        <view class="main-section-title">radio</view>
+        <radio-group name="radio">
+          <label><radio value="radio1" />选项一</label>
+          <label><radio value="radio2" />选项二</label>
+        </radio-group>
+      </view>
+
+      <view class="main-section main-section-gap">
+        <view class="main-section-title">checkbox</view>
+        <checkbox-group name="checkbox">
+          <label><checkbox value="checkbox1" />选项一</label>
+          <label><checkbox value="checkbox2" />选项二</label>
+        </checkbox-group>
+      </view>
+
+      <view class="main-section main-section-gap">
+        <view class="main-section-title">slider</view>
+        <slider value="50" name="slider" show-value></slider>
+      </view>
+
+      <view class="main-section">
+        <view class="main-section-title">input</view>
+        <view class="main-section-input">
+          <input name="input" placeholder="这是一个输入框" />
+        </view>
+      </view>
+
+      <view class="main-section">
+        <view class="main-section-title">textarea</view>
+        <view class="main-section-input">
+          <input name="textarea" placeholder="这是一个textarea输入框" />
+        </view>
+      </view>
+
+      <view class="btn-wrapper">
+        <text style="word-wrap:break-word;word-break:break-all">表单提交的数据:{{formData}}</text>
+        <button type="primary" form-type="submit">Submit</button>
+        <button form-type="reset">Reset</button>
+      </view>
+    </form>
+  </view>
+
+  <template is="foot" />
+</view>

@@ -1,0 +1,20 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'start/stopRecord'}}" />
+
+  <view class="main-body">
+    <view class="main-section main-section_center">
+      <view>录音状态：{{ recording ? '正在录音' : '录音未开启'}}</view>
+      <view class="controls">
+        <button disabled="{{recording}}" bindtap="startRecord">开始录音</button>
+        <button disabled="{{!recording}}" bindtap="stopRecord">停止录音</button>
+        <button disabled="{{playing}}" bindtap="playVoice">播放录音</button>
+        <button disabled="{{!playing}}" bindtap="stopVoice">停止播放</button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

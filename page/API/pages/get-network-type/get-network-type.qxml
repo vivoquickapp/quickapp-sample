@@ -1,0 +1,27 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'getNetworkType'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <view class="main-body-info">
+        <view class="main-body-title">网络状态</view>
+        <block qa:if="{{hasNetworkType === false}}">
+          <text class="main-body-text">未获取</text>
+          <text class="main-body-text">点击绿色按钮可获取网络状态</text>
+        </block>
+        <block qa:if="{{hasNetworkType === true}}">
+          <text class="main-body-text-network-type">{{networkType}}</text>
+        </block>
+      </view>
+      <view class="btn-wrapper">
+        <button type="primary" bindtap="getNetworkType">获取手机网络状态</button>
+        <button bindtap="clear">清空</button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

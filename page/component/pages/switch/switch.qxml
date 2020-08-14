@@ -1,0 +1,32 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'switch'}}" />
+
+  <view class="main-body">
+    <view class="main-section main-section-gap">
+      <view class="main-section-title">默认样式</view>
+      <view>
+        <switch checked bindchange="switch1Change" />
+        <switch bindchange="switch2Change" />
+      </view>
+    </view>
+
+    <view class="main-section">
+      <view class="main-section-title">推荐展示样式</view>
+      <view>
+        <view class="body-view">
+          <view>开启中</view>
+          <switch checked />
+        </view>
+        <view  class="body-view">
+           <view>关闭</view>
+          <switch />
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

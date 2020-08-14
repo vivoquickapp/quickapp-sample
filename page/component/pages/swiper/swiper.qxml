@@ -1,0 +1,78 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'swiper'}}" />
+
+  <view class="main-body">
+    <view class="main-section main-section-spacing swiper" qa:if="{{showSwiper}}">
+      <swiper
+        indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}"
+        interval="{{interval}}"
+        duration="{{duration}}"
+        circular="{{circular}}"
+        bindchange="bindchangeFuc"
+      >
+        <block qa:for="{{background}}" qa:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <view class="main-section main-section-spacing swiper" qa:else>
+      <swiper
+        indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}"
+        interval="{{interval}}"
+        duration="{{duration}}"
+        circular="{{circular}}"
+        bindchange="bindchangeFuc"
+      >
+        <block qa:for="{{background}}" qa:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+
+    <button bindtap="changeSwiperClick">增加一个swiper-item</button>
+    
+    <view class="main-section" style="margin-top: 40rpx;margin-bottom: 0;">
+      <view>
+        <view>
+          <view>指示点</view>
+          <view>
+            <switch checked="{{indicatorDots}}" bindchange="changeIndicatorDots" />
+          </view>
+        </view>
+        <view>
+          <view自动播放</view>
+          <view>
+            <switch checked="{{autoplay}}" bindchange="changeAutoplay" />
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="main-section main-section-spacing">
+      <button bindtap="circularChange">切换circular</button>
+      <view class="main-section-title">
+        <text>幻灯片切换时长(ms)</text>
+        <text class="info">{{duration}}</text>
+      </view>
+      <slider bindchange="durationChange" value="{{duration}}" min="500" max="2000" />
+      <view class="main-section-title">
+        <text>自动播放间隔时长(ms)</text>
+        <text class="info">{{interval}}</text>
+      </view>
+      <slider bindchange="intervalChange" value="{{interval}}" min="2000" max="10000" />
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

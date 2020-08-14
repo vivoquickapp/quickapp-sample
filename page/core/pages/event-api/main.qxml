@@ -1,0 +1,20 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'event-api'}}" />
+
+  <view class="main-body">
+    <view class="text-center">
+      <view>应用级事件测试</view>
+      <view>显示次数：{{showCounter}}</view>
+      <view>隐藏次数：{{hideCounter}}</view>
+      <view>报错次数：{{errorCounter}}</view>
+    </view>
+    <view class="text-center">通过切换前后台，观察显示/隐藏次数是否递增</view>
+    <button type="warn" bind:tap="throwError">触发报错</button>
+    <button type="default" bind:tap="toggleRegister">{{hasRegistered ? '取消监听' : '添加监听'}}</button>
+  </view>
+
+  <template is="foot" />
+</view>

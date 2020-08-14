@@ -1,0 +1,34 @@
+.image-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 20px solid #1aad19;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.cover-image {
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.uni-style {
+  max-width: 300px;
+  height: 300rpx;
+  background-color: #009ad6;
+  border: 3px solid #ff2211;
+  border-radius: 10px;
+  margin: 10px auto;
+  padding: 10px 20px;
+}
+.special-style {
+  color: #696969;
+  font-size: 12px;
+  line-height: 12px;
+  text-align: center;
+  overflow-y: auto;
+  opacity: .6;
+  font-weight: 600;
+  white-space: pre-wrap;
+}
+

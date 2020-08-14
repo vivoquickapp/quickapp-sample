@@ -1,0 +1,14 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: '分享share'}}" />
+  <view class="main-body">
+    <view class="btn-wrapper">
+      <button bindtap="onShareText"> 测试分享文本</button>
+      <button bindtap="onShareFile"> 测试分享文件</button>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

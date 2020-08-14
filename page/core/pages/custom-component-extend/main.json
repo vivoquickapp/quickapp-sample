@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "behavior-comp": "./components/behavior-comp/index"
+  }
+}

@@ -1,0 +1,13 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'onReachBottom', desc: '监听用户上拉触底'}}" />
+
+  <view class="main-body">
+    <view class="long-content">
+      长列表内容...
+    </view>
+  </view>
+  <template is="foot" />
+</view>

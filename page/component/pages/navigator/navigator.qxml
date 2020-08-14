@@ -1,0 +1,32 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'navigator'}}" />
+
+  <view class="main-body">
+    <view class="btn-wrapper">
+      <navigator url="navigate?title=navigate" hover-class="navigator-hover">
+        <button type="default">跳转到新页面1</button>
+      </navigator>
+      <navigator url="redirect?title=redirect" open-type="redirect" hover-class="other-navigator-hover">
+        <button type="default">在当前页打开</button>
+      </navigator>
+      <navigator
+        target="quickApp"
+        open-type="navigate"
+        app-id="com.example.demo"
+        path="page/API/pages/navigator/navigator?jump=1&id=123"
+        version="release"
+        extra-data="{{extraData}}"
+      >
+        <button type="default">打开快应用</button>
+      </navigator>
+      <navigator target="quickApp" open-type="exit" app-id="" path="" extra-data="" version="release">
+          <button type="default">退出快应用</button>
+      </navigator>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

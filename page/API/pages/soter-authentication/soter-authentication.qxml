@@ -1,0 +1,14 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'startSoterAuthentication'}}" />
+
+  <view class="main-body">
+    <view class="btn-wrapper">
+      <button type="primary" bindtap="startAuth">开始认证</button>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

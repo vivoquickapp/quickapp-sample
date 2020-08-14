@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "comp1": "./components/comp1/comp1",
+    "life-comp1": "./components/life-comp1/index",
+    "life-comp3": "./components/life-comp3/index"
+  }
+}

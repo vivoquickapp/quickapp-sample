@@ -1,0 +1,44 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+<view class="container">
+  <template is="head" data="{{title: 'addPhoneContact'}}" />
+  <view class="main-body">
+    <form bindsubmit="submit">
+      <view class="box-rows no-margin-top">
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">姓氏</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" name="lastName" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">名字</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" name="firstName" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">手机号</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" name="mobilePhoneNumber" />
+          </view>
+        </view>
+      </view>
+      <view class="btn-wrapper">
+        <button type="primary" form-type="submit">创建联系人</button>
+        <button type="default" form-type="reset">重置</button>
+      </view>
+    </form>
+    <view class="show-result">
+      <text class="text-result">回调结果:</text>
+      <text class="text-result">{{callbackResult}}</text>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

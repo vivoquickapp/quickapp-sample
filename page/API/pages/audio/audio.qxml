@@ -1,0 +1,37 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'Audio'}}" />
+
+  <view class="main-body">
+    <view class="main-section main-section_center">
+      <text> 播放状态： {{status}} </text>
+      <text> canplay: {{canplay}} </text>
+      <text> seeked: {{seeked}} </text>
+      <text> seeking: {{seeking}} </text>
+      <text> error: {{error}} </text>
+      <text> timeupdate: {{timeupdate}} </text>
+      <text> waiting: {{waiting}} </text>
+      <text> ended: {{ended}} </text>
+      <text> property: {{property}} </text>
+      <view class="btn-wrapper">
+        <button type="primary" bindtap="createInnerAudioContext">createInnerAudioContext</button>
+        <button type="primary" bindtap="setInnerAudioOption">setInnerAudioOption</button>
+        <button type="primary" bindtap="readproperty">readproperty</button>
+        <button type="primary" bindtap="setproperty">setproperty</button>
+        <button type="primary" bindtap="play">play</button>
+        <button type="primary" bindtap="playLocalMusic">playLocalMusic</button>
+        <button type="primary" bindtap="playAndCreateInnerAudioContext">播放并创建 createInnerAudioContext</button>
+        <button type="primary" bindtap="pause">pause</button>
+        <button type="primary" bindtap="seek">seek</button>
+        <button type="primary" bindtap="stop">stop</button>
+        <button type="primary" bindtap="destroy">destroy</button>
+        <button type="primary" bindtap="setupListener">设置监听器</button>
+        <button type="primary" bindtap="offListener">取消监听器</button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

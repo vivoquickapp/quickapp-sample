@@ -1,0 +1,6 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: '当前页'}}" />
+</view>

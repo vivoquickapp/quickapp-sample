@@ -1,0 +1,18 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'Compass', desc: '罗盘监听器'}}" />
+
+  <view class="main-body">
+    <view class="main-section main-section_center">
+      <text>罗盘方向 {{direction}}</text>
+      <text>罗盘精度 {{accuracy}}</text>
+      <view class="controls">
+        <button bindtap="toggle">{{isListen ? '关闭罗盘监听' : '开启罗盘监听'}}</button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

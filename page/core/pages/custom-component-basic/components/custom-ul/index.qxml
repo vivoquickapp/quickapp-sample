@@ -1,0 +1,4 @@
+<view class="box">
+  <view>custom-ul</view>
+  <slot></slot>
+</view>

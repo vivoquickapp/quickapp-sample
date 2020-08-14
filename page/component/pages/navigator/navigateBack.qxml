@@ -1,0 +1,9 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: '新建的页面2'}}" />
+  <navigator open-type="navigateBack" delta=2 hover-class="none" >
+    <button type="default">跳转回navigator首页（delta = 2）</button>
+  </navigator>
+</view>

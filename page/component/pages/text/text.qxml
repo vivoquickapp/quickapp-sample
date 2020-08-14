@@ -1,0 +1,97 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'text'}}" />
+
+  <view class="main-body">
+    <view class="main-section main-section-spacing">
+      <view class="text-box" scroll-y="true" scroll-top="{{scrollTop}}">
+        <text class="p" data-i="{{innertText}}" style="background: #999;" selectable="{{attrsVal.selectable}}" decode="{{attrsVal.decode}}"
+          space="{{attrsVal.space}}">{{text}}
+          <text qa:if="{{innertText}}" class="c text-a">我是\N动态\r加入\n的\ntext组件</text>
+        </text>
+      </view>
+      <button size="mini" disabled="{{!canAdd}}" bindtap="add">add </button>
+      <button size="mini" disabled="{{!canRemove}}" bindtap="remove">remove </button>
+      <button size="mini" bindtap="toggleInnerText">toggle inner</button>
+    </view>
+
+    <view class="main-section main-section-gap">
+      <view class="main-section-title">space</view>
+      <radio-group bindchange="radioChange">
+        <label class="radio" qa:for="{{attrs.space}}">
+          <radio value="{{item}}" checked="{{item === attrsVal.space}}" /> {{item ==='' ? "清空":
+          item}}
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="main-section main-section-gap">
+      <view class="main-section-title">selectable & decode </view>
+      <checkbox-group bindchange="checkboxCheckedChange" id="selectable">
+        <label>
+          <view>
+            <checkbox value="{{attrsVal.selectable}}" checked="{{attrsVal.selectable}}" />
+            selectable
+          </view>
+        </label>
+      </checkbox-group>
+      <checkbox-group bindchange="checkboxCheckedChange" id="decode">
+        <label>
+          <view>
+            <checkbox value="{{attrsVal.decode}}" checked="{{attrsVal.decode}}" value1="{{attrsVal.decode}}" />
+            decode
+          </view>
+        </label>
+      </checkbox-group>
+    </view>
+
+    <view class="main-section main-section-spacing">
+      <view class="main-section-title">嵌套text 动态值， 123 输出一致</view>
+      <view class="text-box2" scroll-y="true" scroll-top="{{scrollTop}}">
+        <text class="text1" qa:if="{{obj}}">
+          <text class="text1-1">1:{{obj.a}}</text>-<text class="text1-2">{{obj.b}}</text>
+        </text>
+        <text class="text2" qa:if="{{obj}}">2.{{obj.a}}-{{obj.b}}</text>
+        <view class="text3" qa:if="{{obj}}">3. {{obj.a}}-{{obj.b}}</view>
+      </view>
+      <button size="mini" bindtap="addValue">add value</button>
+      <button size="mini" bindtap="removeValue">remove value</button>
+    </view>
+
+    <view class="main-section main-section-spacing">
+      <view class="main-section-title">动态嵌套带space text</view>
+      <view class="text-box2" scroll-y="true">
+        <text class="text colum-flex" space="emsp1">
+          <text class="text1">default: {{toggleVal1}}</text>
+          <text class="tex2" space="ensp">ensp: {{toggleVal1}}</text>
+          <text class="text3" space="emsp">emsp: {{toggleVal1}}</text>
+          <text space="nbsp">nbsp: {{toggleVal1}}</text>
+        </text>
+      </view>
+      <button size="mini" bindtap="toggle1">toggle first value</button>
+    </view>
+
+    <view class="main-section main-section-spacing">
+      <view class="main-section-title">动态嵌套带decode text</view>
+      <view class="text-box2" scroll-y="true">
+        <text class="text1  colum-flex">
+          <text>de fault: {{toggleVal2}}</text>
+          <text decode="true">de code1: {{toggleVal2}}</text>
+          <text decode="true" qa:if="{{toggleVal2}}" class="text-a">de code2: {{toggleVal2}}</text>
+        </text>
+      </view>
+      <button size="mini" bindtap="toggle2">toggle second value</button>
+    </view>
+
+    <view class="main-section main-section-spacing">
+      <view class="main-section-title">CSS 携带 white-space (超过 3 行替换为省略号)</view>
+      <text class="ellipsis-replace-text">
+        快应用是基于手机硬件平台的新型应用形态，标准是由主流手机厂商组成的快应用联盟联合制定。其标准的诞生将在研发接口、能力接入、开发者服务等层面建设标准平台，以平台化的生态模式对个人开发者和企业开发者全品类开放。快应用具备传统APP完整的应用体验，无需安装、即点即用；覆盖 10 亿设备，与操作系统深度集成，探索新型应用场景。快应用── 复杂生活的简单答案，让生活更顺畅。
+      </text>
+      <button size="mini" bindtap="toggle2">toggle second value</button>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

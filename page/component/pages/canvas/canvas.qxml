@@ -1,0 +1,31 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'canvas'}}" />
+
+  <view class="main-body">
+    <view class="main-body-wrapper">
+      <button type="primary" bindtap="onDrawBallClick">Cabas Draw Ball</button>
+      <canvas canvas-id="{{canvasId}}"
+        disable-scroll="{{ isDisableScroll }}"	
+        bindtouchstart="onTouchStart"
+        bind:touchmove="onTouchMove"
+        bindtouchend="onTouchEnd"
+        bindlongtap="onLongTap"
+        bindtouchcancel="onTouchCancel"
+        binderror="onTouchError"
+        class="canvas">
+      </canvas>
+      <text>x: {{ xCoordinate }}; y: {{ yCoordinate }}</text>
+    </view>
+  </view>
+ 
+  <scroll-view scroll-y  class="btn-wrap">
+    <view   class="btn-view">
+      <button class="btn" data-action="{{action}}" bind:tap="drawCanvas" qa:for="{{actionList}}" qa:for-item="action">{{action}}</button>
+    </view>
+  </scroll-view>
+
+  <template is="foot" />
+</view>

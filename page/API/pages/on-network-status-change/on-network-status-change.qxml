@@ -1,0 +1,22 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'onNetworkStatusChange'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <view class="main-body-info">
+        <view class="main-body-title">网络状态</view>
+        <block qa:if="{{isConnected === false}}">
+          <text class="main-body-text">没有网络连接</text>
+        </block>
+        <block qa:if="{{isConnected === true}}">
+          <text class="main-body-text-network-type">{{networkType}}</text>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

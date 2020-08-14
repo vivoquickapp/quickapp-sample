@@ -1,0 +1,10 @@
+.img-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.preview-img {
+  width: 82px;
+  height: 82px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}

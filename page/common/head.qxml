@@ -1,0 +1,7 @@
+<template name="head">
+  <view class="main-head">
+    <view class="main-head-title">{{title}}</view>
+    <view class="main-head-line"></view>
+    <view qa:if="{{desc}}" class="main-head-desc">{{desc}}</view>
+  </view>
+</template>

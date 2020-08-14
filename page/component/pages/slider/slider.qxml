@@ -1,0 +1,31 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'slider'}}" />
+
+  <view class="main-body">
+    <view class="main-section main-section-gap">
+      <view class="main-section-title">设置step</view>
+      <view class="body-view">
+        <slider value="60" bindchange="slider1change" step="5" />
+      </view>
+    </view>
+
+    <view class="main-section main-section-gap">
+      <view class="main-section-title">显示当前value</view>
+      <view class="body-view">
+        <slider value="50" bindchange="slider2change" show-value />
+      </view>
+    </view>
+
+    <view class="main-section main-section-gap">
+      <view class="main-section-title">设置最小/最大值</view>
+      <view class="body-view">
+        <slider value="100" bindchange="slider3change" min="50" max="200" show-value />
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

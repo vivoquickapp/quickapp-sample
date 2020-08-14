@@ -1,0 +1,17 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<div id="wrapper">
+  <template is="head" data="{{title: 'Interface Page'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <view class="btn-wrapper">
+        <button bindtap="setNavigationBarColor">设置页面导航条颜色</button>
+        <button bindtap="setNavigationBarColorBlack">设置页面导航条（前景颜色：#000）</button>
+        <button bindtap="getMenuButtonBoundingClientRect">获取菜单按钮位置信息</button>
+      </view>
+    </view>
+  </view>
+  <template is="foot" />
+</div>

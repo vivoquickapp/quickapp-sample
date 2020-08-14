@@ -1,0 +1,32 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'rich-text'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <view class="main-section-title">通过HTML String渲染</view>
+      <view class="page-content">
+        <scroll-view scroll-y>{{htmlSnip}}</scroll-view>
+        <button type="primary" bindtap="renderHtml">渲染HTML</button>
+        <block qa:if="{{renderedByHtml}}">
+          <rich-text nodes="{{htmlSnip}}"></rich-text>
+        </block>
+      </view>
+    </view>
+
+    <view class="main-section">
+      <view class="main-section-title">通过节点渲染</view>
+      <view class="page-content">
+        <scroll-view scroll-y>{{nodeSnip}}</scroll-view>
+        <button type="primary" bindtap="renderNode">渲染Node</button>
+        <block qa:if="{{renderedByNode}}">
+          <rich-text nodes="{{nodes}}"></rich-text>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

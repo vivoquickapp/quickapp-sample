@@ -1,0 +1,22 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'audio'}}" />
+
+  <view class="main-body">
+    <view class="main-section main-section-gap" style="text-align: center;">
+      <audio
+        style="text-align: left"
+        src="{{current.src}}"
+        poster="{{current.poster}}"
+        name="{{current.name}}"
+        author="{{current.author}}"
+        action="{{audioAction}}"
+        controls
+      ></audio>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

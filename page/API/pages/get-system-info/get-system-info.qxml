@@ -1,0 +1,181 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+<view class="container">
+  <template is="head" data="{{title: 'getSystemInfo'}}" />
+  <view class="main-body">
+    <view class="main-section">
+      <view class="box-rows no-margin-top">
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">设备品牌</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.brand}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">设备型号</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.model}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">设备像素比</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.pixelRatio}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">屏幕宽度</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.screenWidth}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">屏幕高度</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.screenHeight}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">可用窗口宽度</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.windowWidth}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">可用窗口高度</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.windowHeight}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">状态栏的高度</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.statusBarHeight}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">语言</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.language}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">版本号</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.version}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">操作系统及版本</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.system}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">客户端平台</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.platform}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">用户字体大小</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.fontSizeSetting}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">客户端基础库版本</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.SDKVersion}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">摄像头的权限</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.cameraAuthorized}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">定位的权限</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.locationAuthorized}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">麦克风的权限</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.microphoneAuthorized}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">蓝牙的系统开关</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.bluetoothEnabled}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">地理位置的系统开关</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.locationEnabled}}" />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">Wi-Fi的系统开关</view>
+          </view>
+          <view class="box-row-bd">
+            <input class="box-input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.wifiEnabled}}" />
+          </view>
+        </view>
+      </view>
+      <view class="btn-wrapper">
+        <button type="primary" bindtap="getSystemInfoSync">同步获取手机系统信息</button>
+      </view>
+      <view class="btn-wrapper">
+        <button type="primary" bindtap="getSystemInfo">异步获取手机系统信息</button>
+      </view>
+      <view class="btn-wrapper">
+        <button type="primary" bindtap="clearInfo">清空系统信息</button>
+      </view>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

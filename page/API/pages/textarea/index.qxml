@@ -1,0 +1,54 @@
+<view class="container textarea-page">
+  <view class="main-body">
+    <view class="main-section">
+      <view class="main-section-title">输入区域高度自适应，不会出现滚动条</view>
+      <view class="textarea-wrp">
+        <textarea
+          class="textarea"
+          placeholder-class="p-class"
+          auto-height
+          placeholder="请输入"
+          bindblur="bindTextAreaBlur"
+          bindlinechange="bindlinechange"
+          bindfocus="bindFocus"
+          bindinput="bindInput"
+          bindconfirm="bindComfirm"
+        ></textarea>
+      </view>
+    </view>
+    <view class="main-section">
+      <view class="main-section-title">输入区域高度自适应，不会出现滚动条</view>
+      <view class="textarea-wrp">
+        <textarea
+          class="textarea"
+          auto-height
+          bindblur="bindTextAreaBlur"
+          bindlinechange="bindlinechange"
+          bindfocus="bindFocus"
+          bindinput="bindInput"
+          bindconfirm="bindComfirm"
+          value="just test"
+        ></textarea>
+      </view>
+      <view class="operating-log">触发 bindblur ：{{ bindblur }}</view>
+      <view class="operating-log">触发 bindlinechange ：{{ bindlinechange }}</view>
+      <view class="operating-log">触发 bindfocus ：{{ bindfocus }}</view>
+      <view class="operating-log">触发 bindinput ：{{ bindinput }}</view>
+      <view class="operating-log">触发 bindconfirm ：{{ bindconfirm}}</view>
+    </view>
+    <!-- <view class="main-section">
+      <view class="main-section-title">输入区域高度自适应，不会出现滚动条, 有内容</view>
+      <view class="textarea-wrp">
+        <textarea bindblur="bindTextAreaBlur" auto-height placeholder='' value="sed全名叫stream editor，流编辑器，用程序的方式来编辑文本，相当的hacker啊。sed基本上就是玩正则模式匹配，所以，玩sed的人，正则表达式一般都比较强。同样，本篇文章不会说sed的全部东西，你可以参看sed的手册，我这里主要还是想和大家竞争一下那些从手机指缝间或马桶里流走的时间，用这些时间来学习一些东西。当然，接下来的还是要靠大家自己双手。" bindlinechange="bindlinechange"/>
+      </view>
+    </view>
+
+    <view class="main-section">
+      <view class="main-section-title">这是一个可以自动聚焦的textarea</view>
+      <view class="textarea-wrp fix-wrap">
+        <textarea auto-focus="true" style="height: 3em" bindlinechange="bindlinechange" />
+      </view>
+    </view> -->
+  </view>
+  <!-- <textarea bindblur="bindTextAreaBlur" auto-height placeholder='' value=""/> -->
+</view>

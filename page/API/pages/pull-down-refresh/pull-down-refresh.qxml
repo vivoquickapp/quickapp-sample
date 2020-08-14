@@ -1,0 +1,21 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'on/stopPullDownRefresh'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <view class="main-body-info">
+        <text class="main-body-text">下滑页面即可刷新</text>
+      </view>
+      <view class="btn-wrapper">
+        <button bindtap="startPullDownRefresh">下拉刷新</button>
+        <button bindtap="stopPullDownRefresh">停止刷新</button>
+        <button bindtap="startPullDownRefreshWithStyle">下拉刷新(修改 Style)</button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

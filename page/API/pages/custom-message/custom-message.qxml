@@ -1,0 +1,19 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'customMessage'}}" />
+
+  <view class="main-body">
+    <view class="main-body-wrapper">
+      <text class="main-body-title">
+        点击气泡icon打开客服消息界面
+      </text>
+      <view class="main-body-line">
+        <contact-button size="40" session-from="weapp"></contact-button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

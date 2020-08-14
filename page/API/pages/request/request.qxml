@@ -1,0 +1,13 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+<view class="container">
+  <template is="head" data="{{title: 'request'}}" />
+  <view class="main-body">
+    <view class="btn-wrapper">
+      <button bindtap="request" type="primary"  loading="{{loading}}">
+        点击发起请求
+      </button>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

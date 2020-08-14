@@ -1,0 +1,23 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: '电量'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <view class="main-body-info">
+        <block qa:if="{{isCharging === true}}">
+          <text class="main-body-text-network-type">正在充电</text>
+        </block>
+        <text class="main-body-text-network-type">{{level}}</text>
+      </view>
+      <view class="btn-wrapper">
+        <button bindtap="getBatteryInfo">getBatteryInfo</button>
+        <button bindtap="getBatteryInfoSync">getBatteryInfoSync</button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

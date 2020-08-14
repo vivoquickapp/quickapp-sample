@@ -1,0 +1,83 @@
+<page-meta
+  class="page-meta-demo"
+  background-text-style="{{bgTextStyle}}"
+  background-color="{{bgColor}}"
+  background-color-top="{{bgColorTop}}"
+  background-color-bottom="{{bgColorBottom}}"
+  scroll-top="{{scrollTop}}"
+  scroll-duration="1000"
+  page-style="color: green"
+  bindscroll="pageScroll"
+  bindresize="pageResize"
+  bindscrolldone="pageScrollDone"
+>
+  <navigation-bar
+    class="navigation-bar-demo"
+    title="{{nbTitle}}"
+    loading="{{nbLoading}}"
+    front-color="{{nbFrontColor}}"
+    background-color="{{nbBackgroundColor}}"
+    color-animation-duration="2000"
+    color-animation-timing-func="easeIn"
+  />
+</page-meta>
+
+<view>以下是页面正文</view>
+
+<view class="intro">
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+  <span>长</span>
+</view>

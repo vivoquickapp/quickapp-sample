@@ -1,0 +1,20 @@
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'WebSocket'}}"/>
+
+  <view class="page-body">
+    <view class="page-section">
+      <view class="text-center">
+        socket 状态：{{ connected ? '已连接' : '未连接'}}
+      </view>
+      <view class="btn-wrapper">
+        <button type="primary" size="40" bindtap="toggle" loading="{{loading}}">{{ connected ? '断开连接' : '创建连接' }}</button>
+        <button type="primary" size="40" bindtap="sendMessage" disabled="{{!connected}}" loading="{{loading}}">发送消息</button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

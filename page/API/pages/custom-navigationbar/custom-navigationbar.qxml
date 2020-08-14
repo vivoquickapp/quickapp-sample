@@ -1,0 +1,20 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'Custom NavigationBar'}}"/>
+
+  <view class="main-body">
+      <view class="main-section main-section_center">
+        <text> custom 模式 NavigationBar </text>
+        <text> width:  {{width}} </text>
+        <text> height:  {{height}} </text>
+        <text> left:  {{left}} </text>
+        <text> top :  {{top}} </text>
+        <text> right:  {{right}} </text>
+        <text> bottom:  {{bottom}} </text>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

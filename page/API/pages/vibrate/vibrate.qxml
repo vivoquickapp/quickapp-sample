@@ -1,0 +1,17 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'vibrate/Long/Short'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <view class="btn-wrapper">
+        <button type="default" bindtap="shortVibrate">短振动</button>
+        <button type="primary" bindtap="longVibrate">长振动</button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

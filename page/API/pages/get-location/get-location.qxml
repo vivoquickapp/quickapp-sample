@@ -1,0 +1,31 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'getLocation'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <view class="main-body-info">
+        <text class="main-body-text-small">当前位置信息</text>
+        <block qa:if="{{hasLocation === false }}">
+          <text class="main-body-text">未获取</text>
+        </block>
+        <block qa:if="{{hasLocation === true}}">
+          <text>E: {{location.longitude[0]}}°{{location.longitude[1]}}′</text>
+          <text>N: {{location.latitude[0]}}°{{location.latitude[1]}}′</text>
+          <text>速度: {{location.speed}}</text>
+          <text>位置的精确度: {{location.accuracy}}</text>
+          <text>高度: {{location.altitude}}</text>
+          <text>水平精度: {{location.horizontalAccuracy}}</text>
+        </block>
+      </view>
+      <view class="btn-wrapper">
+        <button type="primary" bindtap="getLocation">获取位置</button>
+        <button bindtap="clear">清空</button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

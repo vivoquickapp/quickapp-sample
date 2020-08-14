@@ -1,0 +1,25 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'component'}}" />
+
+  <view class="main-body">
+    <view class="text-center">
+      组件扩展测试
+    </view>
+    <form bindsubmit="formSubmit">
+      <behavior-comp
+        class="behavior-comp"
+        id="behaviorComp"
+        name="compName"
+        :value="value"
+      ></behavior-comp>
+      <button form-type="submit">提交</button>
+      <view>提交的数据：{{formData}}</view>
+      <view>component-export: {{exportData}}</view>
+    </form>
+  </view>
+
+  <template is="foot" />
+</view>

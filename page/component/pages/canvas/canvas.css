@@ -1,0 +1,20 @@
+.canvas {
+  padding: 14px;
+  background-color: #efefef;
+  border-radius: 26px;
+  border: 3px solid #f00;
+}
+.btn-wrap {
+  height: 260px;
+}
+.btn-view {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.btn-wrap .btn {
+  width: 42%;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}

@@ -1,0 +1,5 @@
+<view class="main-body">
+  <view class="main-body-wrapper">
+    <canvas canvas-id="canvas" disable-scroll="{{ isDisableScroll }}" bindtouchmove="onTouchMove"  class="canvas"></canvas>
+  </view>
+</view>

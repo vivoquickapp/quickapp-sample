@@ -1,0 +1,73 @@
+textarea {
+    width: 700rpx;
+    padding: 25rpx 0;
+}
+.test {
+  color: #f00;
+}
+.textarea-page .textarea-wrp {
+  padding: 0 3%;
+  background-color: #fff;
+}
+.textarea-page .textarea-wrp .textarea {
+  width: 100%;
+  padding: 15px 0;
+}
+.textarea-page .p-class {
+  color: #2700d4;
+}
+.p-class2 {color: #F00;}
+.p-class3 {color: #0F0;}
+
+.animaion-view-fast,
+.animaion-view {
+  position: relative;
+  width: 250px;
+  height: 100px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: aquamarine;
+  transition: all 1s ease;
+}
+
+.animaion-view-fast {
+  margin-top: 20px;
+  transition: all .2s ease;
+}
+.cells-column {display: flex;align-items: center;}
+.control-section {padding: 10px;margin-bottom:0 5px 25px;border: 1px dashed #666;}
+.control-section .title {color: #333;font-size: 22px;font-weight: bold;text-align: center;border: 1px solid #888;}
+
+.radio {
+  margin-right: 20rpx;
+}
+
+.textarea-1 {
+  padding: 10px;
+  width: 200px;
+  height: 100px;
+  left: 50px;
+  top: 50px;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+.textarea-2 {
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-right: 30px;
+  padding-bottom: 40px;
+  width: 200px;
+  height: 100px;
+  left: 50px;
+  top: 50px;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+.operating-log {
+  margin-left: 10px;
+}
+
+input{
+  width: 60%;
+}

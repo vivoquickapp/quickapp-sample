@@ -1,0 +1,23 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'VendorPay'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <view class="main-body-info">
+        <view class="main-body-title">VendorPay</view>
+        <text class="main-body-text">服务提供商 ：{{vendor}}</text>
+        <text class="main-body-text">签名： {{signature}}</text>
+        <text class="main-body-text">状态： {{status}}</text>
+      </view>
+      <view class="btn-wrapper">
+        <button type="primary"  bindtap="getProvider">获取服务提供商</button>
+        <button type="primary"  bindtap="vendorPay">发起支付</button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

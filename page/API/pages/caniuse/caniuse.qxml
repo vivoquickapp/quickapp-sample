@@ -1,0 +1,23 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'canIUse'}}" />
+
+  <view class="main-body">
+    <view class="main-section main-section_center">
+      <text class="strong-text">Component canIUse</text>
+      <text style="color:{{ item.result === item.expected ? 'green' : 'red' }}" qa:for="{{compTestArr}}">{{item.key}}: {{item.result}}</text>
+    </view>
+    <view class="main-section main-section_center">
+      <text class="strong-text">Api canIUse</text>
+      <text style="color:{{ item.result === item.expected ? 'green' : 'red' }}" qa:for="{{apiTestArr}}">{{item.key}}: {{item.result}}</text>
+    </view>
+    <view class="main-section main-section_center">
+      <text class="strong-text">对象的属性或方法</text>
+      <text style="color:{{ item.result === item.expected ? 'green' : 'red' }}" qa:for="{{otherTestArr}}">{{item.key}}: {{item.result}}</text>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

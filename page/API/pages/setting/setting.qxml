@@ -1,0 +1,94 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'open/get/Setting'}}" />
+
+  <view class="main-body">
+    <form>
+      <view class="main-section">
+        <view class="box-rows no-margin-top">
+          <view class="box-row box-row-input">
+            <view class="box-row-hd">
+              <view class="box-label">用户信息</view>
+            </view>
+            <view class="box-row-bd">
+              <icon
+                qa:if="{{setting['scope.userInfo']}}"
+                class="icon-small"
+                type="success_no_circle"
+                size="23"
+              ></icon>
+            </view>
+          </view>
+
+          <view class="box-row box-row-input">
+            <view class="box-row-hd">
+              <view class="box-label">地理位置</view>
+            </view>
+            <view class="box-row-bd">
+              <icon
+                qa:if="{{setting['scope.userLocation']}}"
+                class="icon-small"
+                type="success_no_circle"
+                size="23"
+              ></icon>
+            </view>
+          </view>
+
+          <view class="box-row box-row-input">
+            <view class="box-row-hd">
+              <view class="box-label">录音功能</view>
+            </view>
+            <view class="box-row-bd">
+              <icon
+                qa:if="{{setting['scope.record']}}"
+                class="icon-small"
+                type="success_no_circle"
+                size="23"
+              ></icon>
+            </view>
+          </view>
+
+          <view class="box-row box-row-input">
+            <view class="box-row-hd">
+              <view class="box-label">保存到相册</view>
+            </view>
+            <view class="box-row-bd">
+              <icon
+                qa:if="{{setting['scope.writePhotosAlbum']}}"
+                class="icon-small"
+                type="success_no_circle"
+                size="23"
+              ></icon>
+            </view>
+          </view>
+
+          <view class="box-row box-row-input">
+            <view class="box-row-hd">
+              <view class="box-label">摄像头</view>
+            </view>
+            <view class="box-row-bd">
+              <icon
+                qa:if="{{setting['scope.camera']}}"
+                class="icon-small"
+                type="success_no_circle"
+                size="23"
+              ></icon>
+            </view>
+          </view>
+        </view>
+      </view>
+    </form>
+
+    <view class="btn-wrapper">
+      <button type="primary" bindtap="getSetting">获取设置</button>
+      <button bindtap="authorize" type="default" data-scope="scope.userLocation">authorize userLocation</button>
+      <button bindtap="authorize" type="default" data-scope="scope.userInfo">authorize userInfo</button>
+      <button bindtap="authorize" type="default" data-scope="scope.record">authorize record</button>
+      <button bindtap="authorize" type="default" data-scope="scope.writePhotosAlbum">authorize writePhotosAlbum</button>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

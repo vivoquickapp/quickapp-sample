@@ -1,0 +1,27 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'createAnimation'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <view class="demo-wrapper">
+        <view class="element" animation="{{animation}}"></view>
+      </view>
+      <scroll-view class="btns" scroll-y="true">
+        <button class="btn" bindtap="rotate">旋转</button>
+        <button class="btn" bindtap="scale">缩放</button>
+        <button class="btn" bindtap="translate">移动</button>
+        <button class="btn" bindtap="skew">倾斜</button>
+        <button class="btn" bindtap="rotateAndScale">旋转并缩放</button>
+        <button class="btn" bindtap="rotateThenScale">旋转后缩放</button>
+        <button class="btn" bindtap="allTogether">同时展示全部</button>
+        <button class="btn" bindtap="allInQueue">顺序展示全部</button>
+        <button class="btn btn-reset" bindtap="reset">还原</button>
+      </scroll-view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

@@ -1,0 +1,88 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'chooseVideo'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <view class="box-rows no-margin-top">
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">视频来源</view>
+          </view>
+          <view class="box-row-bd">
+            <picker
+              range="{{sourceType}}"
+              bindchange="sourceTypeChange"
+              value="{{sourceTypeIndex}}"
+            >
+              <view class="box-input">{{sourceType[sourceTypeIndex]}}</view>
+            </picker>
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">摄像头</view>
+          </view>
+          <view class="box-row-bd">
+            <picker range="{{camera}}" bindchange="cameraChange" value="{{cameraIndex}}">
+              <view class="box-input">{{camera[cameraIndex]}}</view>
+            </picker>
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">拍摄长度</view>
+          </view>
+          <view class="box-row-bd">
+            <picker range="{{duration}}" bindchange="durationChange" value="{{durationIndex}}">
+              <view class="box-input">{{duration[durationIndex]}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+
+      <view class="main-body-info">
+        <block qa:if="{{src === ''}}">
+          <view class="icon-plus icon-plus-nb" bindtap="chooseVideo">
+            <view class="icon-plus-horizontal"></view>
+            <view class="icon-plus-vertical"></view>
+          </view>
+          <view class="icon-plus-text">添加视频</view>
+        </block>
+        <block qa:if="{{src != ''}}">
+          <video id="testVideo" src="{{src}}" class="video"></video>
+        </block>
+      </view>
+
+      <view class="btn-wrapper">
+        <button bindtap="bindStop" class="main-body-button" type="primary">
+          bindStop
+        </button>
+        <button bindtap="bindSeek" class="main-body-button" type="primary">
+          bindSeek
+        </button>
+        <button bindtap="bindPlay" class="main-body-button" type="primary">
+          bindPlay
+        </button>
+        <button bindtap="bindPause" class="main-body-button" type="primary">
+          bindPause
+        </button>
+        <button
+          bindtap="requestFullScreen"
+          class="main-body-button"
+          type="primary"
+        >
+          requestFullScreen
+        </button>
+        <button bindtap="exitFullScreen" class="main-body-button" type="primary">
+          exitFullScreen
+        </button>
+        <button bindtap="saveVideoToPhotosAlbum" class="main-body-button" type="primary">
+          saveVideoToPhotosAlbum
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

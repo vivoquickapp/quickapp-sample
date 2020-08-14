@@ -1,0 +1,19 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'arrayBufferToBase64'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <view class="main-body-info">
+        <text class="main-body-text-network-type">{{result}}</text>
+      </view>
+      <view class="btn-wrapper">
+        <button bindtap="arrayBufferToBase64">arrayBufferToBase64([11, 22, 33])</button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

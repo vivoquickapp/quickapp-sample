@@ -1,0 +1,28 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'intersectionObserver'}}" />
+
+  <view class="main-body">
+    <view class="main-section message">
+      <text qa:if="{{appear}}">
+        小球处于显示状态
+      </text>
+      <text qa:else>
+        小球处于隐藏状态
+      </text>
+    </view>
+    <view class="main-section">
+      <scroll-view class="scroll-view" scroll-y>
+        <view class="scroll-area" style="{{appear ? 'background: #ccc' : ''}}">
+          <text class="tips">向下滚动让小球出现</text>
+          <view class="filling"></view>
+          <view class="ball"></view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

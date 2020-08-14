@@ -1,0 +1,160 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+<view class="container">
+  <template is="head" data="{{title: 'input'}}" />
+  <view class="main-body">
+    <view class="wrapper">
+      <input class="input-1" value="{{styleValue1}}">
+      </input>
+      <input class="input-2" value="{{styleValue2}}">
+      </input>
+    </view>
+
+    <view class="control-section">
+      <view>可输入正确的属性值，修改下面各项属性</view>
+
+      <radio-group bindchange="typeChange">
+        <view>type</view>
+        <label class="radio"> <radio value="text" checked="{{true}}" />text </label>
+        <label class="radio"> <radio value="number" />number </label>
+        <label class="radio"> <radio value="idcard" />idcard </label>
+        <label class="radio"> <radio value="digit" />digit </label>
+      </radio-group>
+
+      <radio-group bindchange="passwordChange">
+        <view>password</view>
+        <label class="radio"> <radio value="true"/>true </label>
+        <label class="radio"> <radio value="false" checked="{{true}}"/>false </label>
+      </radio-group>
+
+      <view class="cells-column">
+        <text>placeholder</text>
+        <input value="{{controlVal.placeholder}}" bindinput="controlInput" data-name="placeholder" />
+      </view>
+
+      <view class="cells-column">
+        <text>placeholder-style</text>
+        <input value="{{controlVal.placeholderStyle}}" bindinput="controlInput" data-name="placeholderStyle" />
+      </view>
+
+      <radio-group bindchange="placeholderClassChange">
+        <view>placeholder-class</view>
+        <label class="radio"> <radio value="p-class" checked="{{true}}"/>p-class </label>
+        <label class="radio"> <radio value="test"/>test </label>
+      </radio-group>
+
+      <radio-group bindchange="disabledChange">
+        <view>disabled</view>
+        <label class="radio"> <radio value="true"/>true </label>
+        <label class="radio"> <radio value="false" checked="{{true}}"/>false </label>
+      </radio-group>
+
+      <view class="cells-column">
+        <text>maxlength</text>
+        <input value="{{controlVal.maxlength}}" bindinput="controlInput" data-name="maxlength" />
+      </view>
+
+      <view class="cells-column">
+        <text>cursor-spacing</text>
+        <input value="{{controlVal.cursorSpacing}}" bindinput="controlInput" data-name="cursorSpacing" />
+      </view>
+
+      <radio-group bindchange="focusChange">
+        <view>focus</view>
+        <label class="radio"> <radio value="true" checked="{{controlVal.focus}}"/>true </label>
+        <label class="radio"> <radio value="false" checked="{{!controlVal.focus}}"/>false </label>
+      </radio-group>
+
+      <radio-group bindchange="marginChange">
+        <view>margin</view>
+        <label class="radio"> <radio value="true" checked="{{controlVal.margin}}"/>true </label>
+        <label class="radio"> <radio value="false" checked="{{!controlVal.margin}}"/>false </label>
+      </radio-group>
+
+      <radio-group bindchange="paddingChange">
+        <view>padding</view>
+        <label class="radio"> <radio value="true" checked="{{controlVal.padding}}"/>true </label>
+        <label class="radio"> <radio value="false" checked="{{!controlVal.padding}}"/>false </label>
+      </radio-group>
+
+      <radio-group bindchange="borderChange">
+        <view>border</view>
+        <label class="radio"> <radio value="true" checked="{{controlVal.border}}"/>true </label>
+        <label class="radio"> <radio value="false" checked="{{!controlVal.border}}"/>false </label>
+      </radio-group>
+
+      <radio-group bindchange="confirmTypeChange">
+        <view>confirm-type</view>
+        <label class="radio"> <radio value="send" checked="{{true}}"/>send </label>
+        <label class="radio"> <radio value="search"/>search </label>
+        <label class="radio"> <radio value="next"/>next </label>
+        <label class="radio"> <radio value="go"/>go </label>
+        <label class="radio"> <radio value="done"/>done </label>
+      </radio-group>
+
+      <radio-group bindchange="confirmHoldChange">
+        <view>confirm-hold</view>
+        <label class="radio"> <radio value="true" checked="{{true}}"/>true </label>
+        <label class="radio"> <radio value="false"/>false </label>
+      </radio-group>
+
+      <view class="cells-column">
+        <text>cursor</text>
+        <input value="{{controlVal.cursor}}" bindinput="controlInput" data-name="cursor" />
+      </view>
+
+      <view class="cells-column">
+        <text>selection-start</text>
+        <input value="{{controlVal.selectionStart}}" bindinput="controlInput" data-name="selectionStart" />
+      </view>
+
+      <view class="cells-column">
+        <text>selection-end</text>
+        <input value="{{controlVal.selectionEnd}}" bindinput="controlInput" data-name="selectionEnd" />
+      </view>
+
+      <radio-group bindchange="adjustPositionChange">
+        <view>adjust-position</view>
+        <label class="radio"> <radio value="true" checked="{{true}}"/>true </label>
+        <label class="radio"> <radio value="false"/>false </label>
+      </radio-group>
+
+    </view>
+
+    <view class="main-section">
+      <view>实时获取输入值：{{inputValue}}</view>
+      <view>以下一个input绑定了事件</view>
+    <view>eventType: {{eventType}}</view>
+    <view>下面的input被click了： {{clickCount}} 次。</view>
+    <button bindtap="clearInput">点击次Button清空input中的内容</button>
+      <view>
+        <view>
+          <input
+          style="margin: {{ controlVal.margin ? '0 20px' : '0' }};padding: {{ controlVal.padding ? '0 20px' : '0' }};border: {{ controlVal.border ? '5px solid #f21' : '0' }}"
+          value="{{inputValue}}"
+          type="{{controlVal.type}}"
+          password="{{controlVal.password}}"
+          placeholder="{{controlVal.placeholder}}" 
+          placeholder-style="{{controlVal.placeholderStyle}}"
+          placeholder-class="{{controlVal.placeholderClass}}"
+          disabled="{{controlVal.disabled}}"
+          maxlength="{{controlVal.maxlength}}" 
+          cursor-spacing="{{controlVal.cursorSpacing}}"
+          focus="{{controlVal.focus}}"
+          confirm-type="{{controlVal.confirmType}}"
+          confirm-hold="{{controlVal.confirmHold}}"
+          cursor="{{controlVal.cursor}}"
+          selection-start="{{controlVal.selectionStart}}"
+          selection-end="{{controlVal.selectionEnd}}"
+          adjust-position="{{controlVal.adjustPosition}}"
+          bindinput="bindKeyInput" 
+          bindfocus="bindFocus" 
+          bindblur="bindBlur" 
+          bindconfirm="bindConfirm"
+          bindtap="bindClick" />
+        </view>
+      </view>
+    </view>
+    </view>
+  <template is="foot" />
+</view>

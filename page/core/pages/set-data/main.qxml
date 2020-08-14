@@ -1,0 +1,23 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'setData'}}" />
+
+  <view class="main-body">
+    <view class="text-center">{{text}}</view>
+    <button type="primary" bindtap="changeText">Change normal data</button>
+    <view class="text-center">{{num}}</view>
+    <button type="primary" bindtap="changeNum">Change normal num</button>
+    <!-- <view class="text-center">{{newKey}}</view> -->
+    <!-- <button type="primary" bindtap="addNewKey">add new Key</button> -->
+    <view class="text-center">{{array[0].text}}</view>
+    <button type="primary" bindtap="changeItemInArray">Change Array data</button>
+    <view class="text-center">{{object.text}}</view>
+    <button type="primary" bindtap="changeItemInObject">Change Object data</button>
+    <comp1 class="text-center" obj="{{obj}}" />
+    <button type="primary" bindtap="addNewField"> Add new data </button>
+  </view>
+
+  <template is="foot" />
+</view>

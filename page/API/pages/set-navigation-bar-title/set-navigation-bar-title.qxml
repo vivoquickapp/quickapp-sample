@@ -1,0 +1,29 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'setNaivgationBarTitle'}}" />
+
+  <form class="main-body" bindsubmit="setNaivgationBarTitle">
+    <view class="box-rows no-margin-top">
+      <view class="box-row box-row-input">
+        <view class="box-row-hd">
+          <view class="box-label">页面标题</view>
+        </view>
+        <view class="box-row-bd">
+          <input
+            class="box-input"
+            type="text"
+            placeholder="请输入页面标题并点击设置即可"
+            name="title"
+          />
+        </view>
+      </view>
+    </view>
+    <view class="btn-wrapper">
+      <button type="primary" form-type="submit">设置</button>
+    </view>
+  </form>
+
+  <template is="foot" />
+</view>

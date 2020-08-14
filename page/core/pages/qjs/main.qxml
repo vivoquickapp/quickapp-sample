@@ -1,0 +1,22 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<qjs src="./tools.qjs" module="tools" />
+<qjs src="./logic.qjs" module="logic" />
+
+<qjs module="foo">
+  var some_msg = "hello world"; module.exports = { msg : some_msg, }
+</qjs>
+
+<view class="container">
+  <template is="head" data="{{title: 'qjs'}}" />
+
+  <view class="main-body">
+    <view>外部 qjs: {{tools.msg}} </view>
+    <view>外部 qjs: {{tools.bar(tools.FOO)}} </view>
+    <view>外部 qjs: {{tools.bar(message)}} </view>
+    <view>内部 qjs: {{foo.msg}} </view>
+  </view>
+
+  <template is="foot" />
+</view>

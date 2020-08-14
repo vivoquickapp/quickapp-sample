@@ -1,0 +1,61 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'get/set/clear Storage'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <view class="box-rows no-margin-top">
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">key</view>
+          </view>
+          <view class="box-row-bd">
+            <input
+              class="box-input"
+              type="text"
+              placeholder="请输入key"
+              name="key"
+              value="{{key}}"
+              bindinput="keyChange"
+            />
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">value</view>
+          </view>
+          <view class="box-row-bd">
+            <input
+              class="box-input"
+              type="text"
+              placeholder="请输入value"
+              name="data"
+              value="{{data}}"
+              bindinput="dataChange"
+            />
+          </view>
+        </view>
+      </view>
+      <view class="btn-wrapper">
+        <button type="primary" bindtap="setStorage">存储 input 中数据</button>
+        <button bindtap="getStorage">读取 input 中数据</button>
+        <button bindtap="clearStorageSync">清理 input 中数据</button>
+      </view>
+      <view class="btn-wrapper">
+        <button type="primary" bindtap="setDateStorage">存储 Date 数据</button>
+        <button bindtap="getDateStorage">读取 Date 数据</button>
+      </view>
+      <view class="btn-wrapper">
+        <button type="primary" bindtap="setArrayStorage">存储 Array 数据</button>
+        <button bindtap="getArrayStorage">读取 Array 数据</button>
+      </view>
+      <view class="btn-wrapper">
+        <button bindtap="getStorageInfo">获取当前 Storage 的信息</button>
+        <button bindtap="clearStorage">清理本地数据缓存</button>
+      </view>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

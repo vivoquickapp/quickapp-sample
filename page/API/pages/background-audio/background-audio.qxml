@@ -1,0 +1,38 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'backgroundAudio'}}" />
+
+  <view class="main-section">
+    <view class="main-body-info">
+      <text class="time-title">{{formatedPlayTime}}</text>
+      <slider
+        class="slider"
+        min="0"
+        max="221"
+        step="1"
+        value="{{playTime}}"
+        bindchange="sliderChange"
+      ></slider>
+      <view class="play-time">
+        <text>00:00</text>
+        <text>03:41</text>
+      </view>
+    </view>
+    <view class="main-body-text tc"
+      >离开当前页面后背景音乐将保持播放，退出快应用时停止</view
+    >
+    <view class="main-body-buttons">
+      <block qa:if="{{playing === true}}">
+        <button class="control-btn" type="warn"  bindtap="stop">停止</button>
+        <button class="control-btn" type="default" bindtap="pause">暂停</button>
+      </block>
+      <block qa:if="{{playing === false}}">
+        <button class="control-btn" type="primary" bindtap="play">播放</button>
+      </block>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

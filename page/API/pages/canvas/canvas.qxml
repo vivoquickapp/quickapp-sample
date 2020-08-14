@@ -1,0 +1,23 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'createCanvasContext'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <canvas class="canvas" canvas-id="canvas"></canvas>
+      <scroll-view class="btns" scroll-y="true">
+        <block qa:for="{{methods}}" qa:for-item="method">
+          <button class="btn" bindtap="{{method}}">{{method}}</button>
+        </block>
+        <button class="btn" bindtap="toTempFilePath" type="primary">
+          toTempFilePath
+        </button>
+      </scroll-view>
+      <image src="{{toTempFilePathUrl}}"></image>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

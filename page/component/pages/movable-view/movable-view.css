@@ -1,0 +1,52 @@
+movable-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100rpx;
+  width: 100rpx;
+  background: #1AAD19;
+  color: #fff;  
+  border: 1px solid #F00;
+}
+
+movable-area {
+  height: 400rpx;
+  width: 400rpx;
+  margin: 50rpx 0rpx 0 50rpx;
+  background-color: #ccc;
+  overflow: hidden;
+}
+
+.max {
+  width: 600rpx;
+  height: 600rpx;
+}
+
+.main-section {
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+
+.main-section-title {
+  margin-top: 50rpx;
+  font-size: 28rpx;
+  color: #999999;
+  margin-bottom: 10rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.main-section-title.first {
+  margin-top: 0;
+}
+
+.btn-wrapper {
+  margin-top: 20rpx;
+}
+
+.control-area {
+  margin: 10px;
+}
+.control-area .item {display: flex;align-items: center;margin-bottom: 1px solid #999;}
+.control-area .item .text {width: 120px;background: #e6e6e6;padding: 5px;text-align: center;}
+.control-area .item .input {background: #fff;border-left: 1px solid #989898;padding: 5px 0;}

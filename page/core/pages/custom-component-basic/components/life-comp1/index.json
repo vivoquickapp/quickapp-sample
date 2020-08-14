@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "life-comp2": "../life-comp2/index"
+  }
+}

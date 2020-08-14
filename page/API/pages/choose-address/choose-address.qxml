@@ -1,0 +1,74 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'chooseAddress'}}" />
+
+  <form>
+    <view class="main-section">
+      <view class="box-rows no-margin-top">
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">收货人姓名</view>
+          </view>
+          <view class="box-row-bd">
+            {{ addressInfo.userName }}
+          </view>
+        </view>
+
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">邮编</view>
+          </view>
+          <view class="box-row-bd">
+            {{ addressInfo.postalCode }}
+          </view>
+        </view>
+
+        <view class="box-row box-row-input region">
+          <view class="box-row-hd">
+            <view class="box-label">地区</view>
+          </view>
+          <view class="box-row-bd">
+            {{ addressInfo.provinceName }} {{ addressInfo.cityName }} {{ addressInfo.countyName }}
+          </view>
+        </view>
+
+        <view class="box-row box-row-input detail">
+          <view class="box-row-hd">
+            <view class="box-label">收货地址</view>
+          </view>
+          <view class="box-row-bd">
+            {{ addressInfo.detailInfo }}
+          </view>
+        </view>
+
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">国家码</view>
+          </view>
+          <view class="box-row-bd">
+            {{ addressInfo.nationalCode }}
+          </view>
+        </view>
+
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">手机号码</view>
+          </view>
+          <view class="box-row-bd">
+            {{ addressInfo.telNumber }}
+          </view>
+        </view>
+      </view>
+    </view>
+  </form>
+
+  <view class="main-body">
+    <view class="btn-wrapper">
+      <button type="primary" bindtap="chooseAddress">获取收货地址</button>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

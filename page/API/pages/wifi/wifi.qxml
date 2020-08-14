@@ -1,0 +1,43 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+<view class="container">
+  <template is="head" data="{{title: 'Wi-Fi'}}" />
+  <view class="dialog-wrapper" qa:if="{{showPopuUps}}">
+    <view class="dialog">
+      <text class="dialog-header">{{SSID}}</text>
+      <view class="dialog-password">
+        <text class="dialog-text">密码</text>
+        <input class="dialog-input" bindinput="onInputChanged"/>
+      </view>
+      <view class="dialog-button">
+        <button class="el-button cancel-btn" bindtap="onCancelClicked">取消</button>
+        <button class="el-button confirm-btn" bindtap="onConfirmClicked">连接</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="main-body">
+    <view class="main-body-info">
+      <scroll-view class="device-list" scroll-y>
+        <view bindtap="onConnectWifi" data-index="{{index}}" class="item" qa:for="{{wifiList}}" qa:key="SSID">
+          <view class="list">
+            <text>{{ item.SSID }}</text>
+            <span class="wifi-icon">
+              <span class="wifi-1"></span>
+              <span class="wifi-2 {{item.strength < 2 ? 'off' : ''}}"></span>
+              <span class="wifi-3 {{item.strength < 3 ? 'off' : ''}}"></span>
+              <span class="wifi-4 {{item.strength < 4 ? 'off' : ''}}"></span>
+              <span class="lock" qa:if="{{item.secure}}"></span>
+            </span>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <text class="tip-text">监听到已连接到 {{ whichWifiConnected }} Wifi</text>
+    <view class="btn-wrapper">
+      <button type="primary" bindtap="startSearch">搜索Wi-Fi</button>
+      <button bindtap="stopSearch">停止搜索</button>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

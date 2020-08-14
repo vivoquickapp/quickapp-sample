@@ -1,0 +1,44 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'sendMessage'}}" />
+
+  <view class="main-body">
+    <view class="box-rows__title">发送内容（以下字段可自由适配）</view>
+    <view class="box-rows no-margin-top">
+      <view class="box-row box-row-input">
+        <view class="box-row-hd">
+          <view class="box-label">实例字段</view>
+        </view>
+        <view class="box-row-bd">
+          <input class="box-input" type="text" placeholder="请输入" />
+        </view>
+      </view>
+      <view class="box-row box-row-input">
+        <view class="box-row-hd">
+          <view class="box-label">实例字段</view>
+        </view>
+        <view class="box-row-bd">
+          <input class="box-input" type="text" placeholder="请输入" />
+        </view>
+      </view>
+    </view>
+
+    <view class="box-rows">
+      <view class="box-row box-row-input">
+        <view class="box-row-hd">
+          <view class="box-label">跳转链接</view>
+        </view>
+        <view class="box-row-bd">
+          <input class="box-input" type="text" placeholder="请输入" value="{{shareData.path}}" />
+        </view>
+      </view>
+    </view>
+    <view class="btn-wrapper">
+      <button type="primary">发送模板消息</button>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

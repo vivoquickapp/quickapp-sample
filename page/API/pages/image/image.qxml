@@ -1,0 +1,61 @@
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'choose/previewImage'}}" />
+
+  <view class="page-body">
+    <view class="page-section">
+
+      <view class="box-rows box-rows_after-title">
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">图片来源</view>
+          </view>
+          <view class="box-row-bd">
+            <picker range="{{sourceType}}" bindchange="sourceTypeChange" value="{{sourceTypeIndex}}" mode="selector">
+              <view class="">{{sourceType[sourceTypeIndex]}}</view>
+            </picker>
+          </view>
+        </view>
+
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">图片质量</view>
+          </view>
+          <view class="box-row-bd">
+            <picker range="{{sizeType}}" bindchange="sizeTypeChange" value="{{sizeTypeIndex}}" mode="selector">
+              <view class="">{{sizeType[sizeTypeIndex]}}</view>
+            </picker>
+          </view>
+        </view>
+        <view class="box-row box-row-input">
+          <view class="box-row-hd">
+            <view class="box-label">数量限制</view>
+          </view>
+          <view class="box-row-bd">
+            <picker range="{{count}}" bindchange="countChange" value="{{countIndex}}" mode="selector">
+              <view class="">{{count[countIndex]}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+      <view class="btn-wrapper">
+        <button type="primary" bind:tap="chooseImage">选择图片</button>
+      </view>
+      <view class="box-rows">
+        <view class="box-row">
+          <view>点击图片可预览 {{imageList.length}}/{{count[countIndex]}}</view>
+        </view>
+        <view class="box-row">
+          <view class="img-wrapper">
+            <image qa:for="{{imageList}}" qa:for-item="image" class="preview-img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

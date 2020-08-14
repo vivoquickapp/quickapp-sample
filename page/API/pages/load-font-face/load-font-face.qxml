@@ -1,0 +1,20 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'loadFontFace'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <view class="main-body-info display-area {{ loaded ? 'font-loaded' : '' }}">
+        <text>{{ fontFamily }}</text>
+      </view>
+      <view class="btn-wrapper">
+        <button type="primary" bindtap="loadFontFace">加载字体</button>
+        <button type="default" bindtap="clear">清除</button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

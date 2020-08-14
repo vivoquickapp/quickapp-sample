@@ -1,0 +1,65 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'radio'}}" />
+
+  <view class="main-body">
+    <view class="main-section main-section-gap">
+      <view class="main-section-title">默认样式</view>
+      <radio-group>
+        <label class="radio"> <radio value="r1" checked="true" />选中 </label>
+        <label class="radio"> <radio value="r2" />未选中 </label>
+        <view class="main-section-title">定制样式</view>
+        <label class="checkbox"> <radio value="cb2" color="#f00" />color #f00 </label>
+        <view class="main-section-title"
+          >动态改变color: <text style="color: {{radioColor}}">{{radioColor}}</text></view
+        >
+        <label class="checkbox">
+          <radio value="cb2" color="{{radioColor}}"/>dymamic color
+        </label>
+        <button bindtap="changeColor" type="primary">改变 样式</button>
+      </radio-group>
+
+      <radio-group>
+        <view>test checked</view>
+        <label class="radio"> <radio value="true" checked="{{isSelected}}"/>true </label>
+        <label class="radio"> <radio value="false" checked="{{!isSelected}}"/>false </label>
+      </radio-group>
+    </view>
+
+    <view class="main-section">
+      <view class="main-section-title">推荐展示样式</view>
+      <view class="section-radio">
+        <radio-group bindchange="radioChange">
+          <label qa:for="{{items}}" qa:key="value">
+            <view>
+              <radio value="{{item.value}}" checked="{{item.checked}}" />
+            </view>
+            <view>{{item.name}}</view>
+          </label>
+        </radio-group>
+      </view>
+      <view class="section-val">value: {{itemValue}}</view>
+    </view>
+
+
+
+  <view class="main-section">
+    <view class="main-section-title">外部改变radio的值</view>
+    <view>
+      <radio-group bindchange="radioCheckedChange">
+        <label>
+          <view class="section-radio">
+            <radio value="testradio" checked="{{isChecked}}" />
+          </view>
+          <view>测试外部改变checked 效果: {{isChecked}}</view>
+        </label>
+      </radio-group>
+    </view>
+    <button bindtap="changeChecked" type="primary">改变 checked</button>
+  </view>
+</view>
+
+  <template is="foot" />
+</view>

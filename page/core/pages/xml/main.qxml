@@ -1,0 +1,152 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<template name="objectCombine">
+  <view>foo: {{foo}}; bar: {{bar}}; c: {{c}}; d: {{d}}; name: {{name}}</view>
+</template>
+
+<template name="odd">
+  <view> odd </view>
+</template>
+
+<template name="even">
+  <view> even </view>
+</template>
+
+<view class="container">
+  <template is="head" data="{{title: 'QXML'}}" />
+
+  <view class="main-body text-center">
+    <view class="page-box">
+      <view class="box-header">
+        <view class="h1">数据绑定</view>
+      </view>
+
+      <view class="box-body">
+        <view class="h2">简单绑定</view>
+        <view>{{message}}</view>
+      </view>
+
+      <view class="box-body">
+        <view class="h2">组件属性(需要在双引号之内)</view>
+        <view id="item-{{id}}">item-id</view>
+      </view>
+
+      <view class="box-body">
+        <view class="h2" bindtap="toggleCondition">控制属性(需要在双引号之内)</view>
+        <view qa:if="{{condition}}">qa:if</view>
+      </view>
+
+      <view class="box-body">
+        <view class="h2">关键字(需要在双引号之内)</view>
+        <view>
+          <checkbox checked="{{false}}"> </checkbox>
+          <checkbox checked="{{true}}"> </checkbox>
+        </view>
+      </view>
+
+      <view class="box-body">
+        <view class="h2">运算-三元运算 -- <text bindtap="toggleFlag">切换 hidden</text></view>
+        <view hidden="{{flag ? true : false}}"> Hidden </view>
+      </view>
+
+      <view class="box-body">
+        <view class="h2">运算-逻辑判断</view>
+        <view qa:if="{{length > 5}}">qa:if</view>
+      </view>
+
+      <view class="box-body">
+        <view class="h2">运算-字符串运算</view>
+        <view>{{"hello" + name}}</view>
+      </view>
+
+      <view class="box-body">
+        <view class="h2">运算-数据路径运算</view>
+        <view>{{object.key}} {{array[0].message}}</view>
+      </view>
+
+      <view class="box-body">
+        <view class="h2">组合-数组</view>
+        <view><text qa:for="{{[zero, 1, 2, 3, 4]}}"> {{item}} </text></view>
+      </view>
+
+      <view class="box-body">
+        <view class="h2">组合-对象</view>
+        <template is="objectCombine" data="{{foo: a, bar: b, ...obj2, name}}"></template>
+      </view>
+    </view>
+
+    <view class="page-box">
+      <view class="box-header">
+        <view class="h1">列表渲染</view>
+      </view>
+      <view class="box-body">
+        <view qa:for="{{array}}" qa:for-index="idx" qa:for-item="itemName">
+          {{idx}}: {{itemName.message}}
+        </view>
+        <block qa:for="{{[1, 2, 3]}}">
+          <text> {{index}}: </text>
+          <text> {{item}} </text>
+        </block>
+      </view>
+    </view>
+
+    <view class="page-box">
+      <view class="box-header">
+        <view class="h1">条件渲染</view>
+      </view>
+      <view class="box-body">
+        <view qa:if="{{view == 'WEBVIEW'}}"> WEBVIEW </view>
+        <view qa:elif="{{view == 'APP'}}"> APP </view>
+        <view qa:else="{{view == 'other'}}"> other </view>
+
+        <block qa:if="{{true}}">
+          <view> true view </view>
+        </block>
+      </view>
+    </view>
+
+    <view class="page-box">
+      <view class="box-header">
+        <view class="h1">模板</view>
+      </view>
+      <view class="box-body">
+        <block qa:for="{{[1, 2, 3, 4, 5]}}">
+          <template is="{{item % 2 == 0 ? 'even' : 'odd'}}" />
+        </block>
+      </view>
+    </view>
+
+    <view class="page-box">
+      <view class="box-header">
+        <view class="h1">引用-import</view>
+      </view>
+      <view class="box-body">
+        <import src="item.qxml" />
+        <template is="item" data="{{text: 'forbar'}}" />
+      </view>
+    </view>
+
+    <view class="page-box">
+      <view class="box-header">
+        <view class="h1">引用-include</view>
+      </view>
+      <view class="box-body">
+        <!-- TODO: include 还不支持自闭和 -->
+        <include src="header.qxml"></include>
+        <view> body </view>
+      </view>
+    </view>
+
+    <view class="page-box">
+      <view class="box-header">
+        <view class="h1">内联 style 测试</view>
+      </view>
+      <view class="box-body">
+        <view style="color: #000; font-size: 14rpx; padding-left: 30rpx;">style 中带 rpx 单位</view>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

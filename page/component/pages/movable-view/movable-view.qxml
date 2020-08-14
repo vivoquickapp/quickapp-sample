@@ -1,0 +1,89 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'movable-view'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <view class="main-section-title first">movable-view区域小于movable-area</view>
+      <movable-area>
+        <movable-view x="{{x}}" y="{{y}}" direction="all">text</movable-view>
+      </movable-area>
+    </view>
+    <view class="control-area">
+      <view class="item">
+        <text class="text">adjust x:</text>
+        <input type="text" value="{{x}}" class="input" bindinput="bindinput" data-name="inputx">
+      </view>
+      <view class="item">
+        <text class="text">adjust y:</text>
+        <input type="text" value="{{y}}" class="input" bindinput="bindinput" data-name="inputy">
+      </view>
+    </view>
+    <view class="btn-wrapper">
+      <button bindtap="tap" class="main-body-button" type="primary">点击移动到 ({{inputx}}px, {{inputy}}px)</button>
+    </view>
+
+    <view class="main-section">
+      <view class="main-section-title">movable-view区域大于movable-area</view>
+      <movable-area>
+        <movable-view class="max" direction="all">text</movable-view>
+      </movable-area>
+    </view>
+
+    <view class="main-section">
+      <view class="main-section-title">只可以横向移动</view>
+      <movable-area>
+        <movable-view direction="horizontal">text</movable-view>
+      </movable-area>
+    </view>
+
+    <view class="main-section">
+      <view class="main-section-title">只可以纵向移动</view>
+      <movable-area>
+        <movable-view direction="vertical">text</movable-view>
+      </movable-area>
+    </view>
+
+    <view class="main-section">
+      <view class="main-section-title">可超出边界</view>
+      <movable-area>
+        <movable-view direction="all" out-of-bounds>text</movable-view>
+      </movable-area>
+    </view>
+
+    <view class="main-section">
+      <view class="main-section-title">带有惯性</view>
+      <movable-area>
+        <movable-view direction="all" inertia>text</movable-view>
+      </movable-area>
+    </view>
+
+    <view class="main-section">
+      <view class="main-section-title">可放缩</view>
+      <movable-area scale-area>
+        <movable-view
+          direction="all"
+          bindchange="onChange"
+          bindscale="onScale"
+          bindhtouchmove="onhtouchmove" bindvtouchmove="onvtouchmove"
+          scale
+          scale-value="{{scale}}"
+          >text</movable-view
+        >
+      </movable-area>
+    </view>
+    <view class="control-area">
+      <view class="item">
+        <text class="text">adjust scale:</text>
+        <input type="text" value="{{scale}}" class="input" bindinput="bindinput" data-name="inputscale">
+      </view>
+    </view>
+    <view class="btn-wrapper">
+      <button bindtap="tap2" class="main-body-button" type="primary">点击放大{{inputscale}}倍</button>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

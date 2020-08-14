@@ -1,0 +1,17 @@
+<!--push/index.qxml-->
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'push', desc: '推送'}}" />
+
+  <view class="main-body">
+    <view class="btn-wrapper">
+      <button bindtap="pushGetProvider" type="primary">服务提供商</button>
+      <button bindtap="pushSubscribe" type="primary">订阅</button>
+      <button bindtap="pushUnSubscribe" type="primary">取消订阅</button>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

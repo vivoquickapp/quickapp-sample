@@ -1,0 +1,14 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'action-sheet'}}" />
+
+  <view class="main-body">
+    <view class="btn-wrapper">
+      <button type="default" bindtap="openActionSheet">打开 action sheet</button>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

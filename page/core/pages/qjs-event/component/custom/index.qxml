@@ -1,0 +1,17 @@
+<qjs src="../../test.qjs" module="test"></qjs>
+
+<view class="text-center">
+  <view>qjs 及事件回调测试</view>
+  <view>name: {{test.name}}</view>
+  <view>call qjs function: {{test.printName()}}</view>
+</view>
+<view class="btns">
+  <button
+    qa:for="{{actionArr}}"
+    class="btn btn-{{index}}"
+    bind:tap="{{test[item.name]}}"
+    data-index="{{index}}"
+  >
+    {{item.name}}
+  </button>
+</view>

@@ -1,0 +1,74 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'video'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <view class="operating-log">触发 bindplay ：{{ play }}</view>
+      <view class="operating-log">触发 bindpause ：{{ pause }}</view>
+      <view class="operating-log">触发 bindended ：{{ ended }}</view>
+      <view class="operating-log">触发 bindtimeupdate ：{{ timeupdate }}</view>
+      <view class="operating-log">触发 bindfullscreenchange ：{{ fullscreenchange }}</view>
+      <view class="operating-log">触发 binderror ：{{ error}}</view>
+
+      <video
+        id="myVideo"
+        src="{{controlVal.src}}"
+        class="uni-style special-style"
+        danmu-list="{{danmuList}}"
+        danmu-btn
+        show-play-btn="{{true}}"
+        controls="{{controlVal.controls}}"
+        autoplay="{{controlVal.autoplay}}"
+        object-fit="{{controlVal.objectFit}}"
+        poster="{{controlVal.poster}}"
+        bind:play="bindplay"
+        bind:pause="bindpause"
+        bind:ended="bindended"
+        bind:timeupdate="bindtimeupdate"
+        bind:fullscreenchange="bindfullscreenchange"
+        bind:error="binderror"
+      ></video>
+
+      <button bind:tap="triggerPlay">play</button>
+      <button bind:tap="onPlayBtnClick">play(createVideoContext in onLoad)</button>
+
+      <view class="control-section">
+      <view>可输入正确的属性值，修改下面各项属性</view>
+
+      <radio-group bindchange="controlsChange">
+        <view class="main-section-title">controls</view>
+        <label class="radio"> <radio value="true" checked="{{controlVal.controls}}" />true </label>
+        <label class="radio"> <radio value="false" checked="{{!controlVal.controls}}" />false </label>
+      </radio-group>
+
+      <radio-group bindchange="autoplayChange">
+        <view class="main-section-title">autoplay</view>
+        <label class="radio"> <radio value="true" checked="{{controlVal.autoplay}}"/>true </label>
+        <label class="radio"> <radio value="false" checked="{{!controlVal.autoplay}}" />false </label>
+      </radio-group>
+
+      <radio-group bindchange="objectfitChange">
+        <view class="main-section-title">object-fit</view>
+        <label class="radio"> <radio value="contain" checked="{{controlVal.objectFit === 'contain'}}" />contain </label>
+        <label class="radio"> <radio value="fill" checked="{{controlVal.objectFit === 'fill'}}" />fill </label>
+        <label class="radio"> <radio value="cover" checked="{{controlVal.objectFit === 'cover'}}" />cover </label>
+      </radio-group>
+
+      <radio-group bindchange="posterChange">
+        <view class="main-section-title">poster</view>
+        <label class="radio"> <radio value="../../resources/cat.jpg" checked="true" />封面1 </label>
+        <label class="radio"> <radio 
+        value="https://images.unsplash.com/photo-1565520651265-1148c3b277f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80" />封面2 </label>
+      </radio-group>
+
+    </view>
+      
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

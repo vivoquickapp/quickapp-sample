@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "name": "quickapp-sample",
+  "description": "quickapp sample",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}

@@ -1,0 +1,538 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'map'}}" />
+
+  <view class="main-body">
+    <view class="main-section main-section-gap">
+      <map
+        id="map-1"
+        subkey="{{subKey}}"
+        style="width: 100%; height: 300px;"
+        latitude="{{latitude}}"
+        longitude="{{longitude}}"
+        scale="{{scale}}"
+        markers="{{markers}}"
+        covers="{{covers}}"
+        show-location="{{showLocation}}"
+        show-compass="{{showCompass}}"
+        enable-overlooking="{{enableOverlooking}}"
+        enable-zoom="{{enableZoom}}"
+        enable-rotate="{{enableRotate}}"
+        enable-scroll="{{enableScroll}}"
+        polygons="{{polygons}}"
+        polyline="{{polyline}}"
+        circles="{{circles}}"
+        controls="{{controls}}"
+        include-points="{{includePoints}}"
+        bindtap="mapTap"
+        bindmarkertap="markerTap"
+        bindcontroltap="controlTap"
+        bindcallouttap="calloutTap"
+        bindupdated="mapUpdate"
+        bindregionchange="regionChange"
+        bindpoitap="poiTap"
+      >
+      </map>
+    </view>
+  </view>
+
+  <view class="main-section">
+    <view class="btn-wrapper">
+      <button bindtap="toggleIncludeView">
+        缩放视野
+      </button>
+      <button bindtap="jumpToCurrent">
+        跳到当前位置
+      </button>
+      <button bindtap="getCenterLocation">
+        获取当前经纬度 纬度：{{currentLatitude}}经度：{{currentLongitude}}
+      </button>
+      <button bindtap="getRegion">
+        获取视野范围，西南角纬度: {{southwest.latitude}}，经度：{{southwest.longitude}}；东北角纬度：{{northeast.latitude}}，经度：{{northeast.longitude}}
+      </button>
+
+      <view>latitude, longitude</view>
+      <view class="main-section">
+        <view>设置位置的纬度，例如 22.598482</view>
+        <view>
+          <view>
+            <input placeholder="浮点数，范围 -90 ~ 90" type="digit" bindinput="setLatitude" value="{{latitude}}"/>
+          </view>
+        </view>
+      </view>
+      <view class="main-section">
+        <view>设置位置的经度，例如 113.975025</view>
+        <view>
+          <view>
+            <input placeholder="浮点数，范围 -180 ~ 180" type="digit" bindinput="setLongitude" value="{{longitude}}"/>
+          </view>
+        </view>
+      </view>
+      <button bindtap="resetPosition">
+        重置位置
+      </button>
+
+      <view>scale</view>
+      <view class="main-section">
+        <view>设置缩放级别</view>
+        <view>
+          <view>
+            <input placeholder="取值范围为3-20" type="number" bindinput="setScale"/>
+          </view>
+        </view>
+      </view>
+      <button bindtap="getScale">
+        获取缩放级别为： {{scale}}
+      </button>
+
+      <view>markers</view>
+      <button bindtap="toggleMarkers">
+        {{markers.length ? '清除 markers' : '添加 markers'}}
+      </button>
+
+      <view qa:if="{{markers.length}}">
+        
+        <button bindtap="translateMarker">
+          平移默认marker
+        </button>
+
+        <view class="main-section">
+          <view>设置默认 marker 的zIndex</view>
+          <view>
+            <view>
+              <input placeholder="请输入数字" type="number" bindinput="setMarkers" data-type="0" data-name="zIndex"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置蓝色图标 marker 的标题</view>
+          <view>
+            <view>
+              <input placeholder="点击时显示，callout存在时将被忽略" bindinput="setMarkers" data-type="1" data-name="title"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置蓝色图标 marker 的纬度，例如 23.0995185</view>
+          <view>
+            <view>
+              <input placeholder="浮点数，范围 -90 ~ 90" type="digit" bindinput="setMarkers" data-type="1" data-name="latitude"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置蓝色图标 marker 的经度，例如 113.325304</view>
+          <view>
+            <view>
+              <input placeholder="浮点数，范围 -180 ~ 180" type="digit" bindinput="setMarkers" data-type="1" data-name="longitude"/>
+            </view>
+          </view>
+        </view>
+        
+        <view class="main-section">
+          <view>设置蓝色图标 marker 的图标(例如 '../../../../image/pin.png'，'/image/pin_blue.png')</view>
+          <view>
+            <view>
+              <input placeholder="相对路径，绝对路径，临时路径和网络图片" bindinput="setMarkers" data-type="1" data-name="iconPath"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置蓝色图标 marker 的宽度</view>
+          <view>
+            <view>
+              <input placeholder="默认为图片实际宽度" bindinput="setMarkers" data-type="1" data-name="width"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置蓝色图标 marker 的高度</view>
+          <view>
+            <view>
+              <input placeholder="默认为图片实际高度" bindinput="setMarkers" data-type="1" data-name="height"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置 markers (默认 marker + 蓝色图标 marker) 旋转角度</view>
+          <view>
+            <view>
+              <input placeholder="范围 0 ~ 360，默认为 0" bindinput="setMarkers" data-type="all" data-name="rotate"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置 markers (默认 marker + 蓝色图标 marker) 透明度</view>
+          <view>
+            <view>
+              <input placeholder="默认 1，范围 0 ~ 1" type="digit" bindinput="setMarkers" data-type="all" data-name="alpha"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置 markers (默认 marker + 蓝色图标 marker) 锚点</view>
+          <view>
+            <view class="line-input">
+              <input placeholder="x, 范围 0-1" type="digit" bindinput="updateMarkersAnchor" data-name="x"/>
+              <input placeholder="y, 范围 0-1" type="digit" bindinput="updateMarkersAnchor" data-name="y"/>
+              <button bindtap="setMarkersAnchor">确定</button>
+            </view>
+          </view>
+        </view>
+
+        <button bindtap="toggleCallout">
+          {{markers[0].callout ? '清除' : '添加'}}默认 marker 气泡 callout
+        </button>
+
+        <view qa:if="{{markers[0].callout}}">
+          <view class="title">marker.callout</view>
+
+          <view class="control-section">            
+            <view class="cells-column">
+              <text>content</text>
+              <textarea placeholder="callout 文本" bindinput="setCallout" data-name="content" data-type="0"/>
+            </view>
+          </view>
+
+          <view class="control-section">            
+            <view class="cells-column">
+              <text>color</text>
+              <input placeholder="callout 文本颜色" bindinput="setCallout" data-name="color" data-type="0"/>
+            </view>
+          </view>
+
+          <view class="control-section">            
+            <view class="cells-column">
+              <text>fontSize</text>
+              <input placeholder="callout 文字大小" type="digit" bindinput="setCallout" data-name="fontSize" data-type="0"/>
+            </view>
+          </view>
+
+          <view class="control-section">            
+            <view class="cells-column">
+              <text>borderRadius</text>
+              <input placeholder="callout 边框圆角" type="digit" bindinput="setCallout" data-name="borderRadius" data-type="0"/>
+            </view>
+          </view>
+
+          <view class="control-section">            
+            <view class="cells-column">
+              <text>bgColor</text>
+              <input placeholder="callout 背景色" bindinput="setCallout" data-name="bgColor" data-type="0"/>
+            </view>
+          </view>
+
+          <view class="control-section">            
+            <view class="cells-column">
+              <text>padding</text>
+              <input placeholder="callout 文本边缘留白" type="digit" bindinput="setCallout" data-name="padding" data-type="0"/>
+            </view>
+          </view>
+
+          <view class="control-section">            
+            <view class="cells-column">
+              <text>display</text>
+              <button bindtap="setCallout" data-name="display" data-value="BYCLICK" data-type="0">点击显示</button>
+              <button bindtap="setCallout" data-name="display" data-value="ALWAYS" data-type="0">常显</button>
+            </view>
+          </view>
+
+          <view class="control-section">            
+            <view class="cells-column">
+              <text>textAlign</text>
+              <button bindtap="setCallout" data-name="textAlign" data-value="left" data-type="0">left</button>
+              <button bindtap="setCallout" data-name="textAlign" data-value="right" data-type="0">right</button>
+              <button bindtap="setCallout" data-name="textAlign" data-value="center" data-type="0">center</button>
+            </view>
+          </view>
+        </view>
+
+        <button bindtap="toggleLabel">
+          {{markers[0].label ? '清除' : '添加'}}默认 markers 标签
+        </button>
+
+        <view qa:if="{{markers[0].label}}">
+          <view class="title">marker.label</view>
+
+          <view class="control-section">            
+            <view class="cells-column">
+              <text>content</text>
+              <textarea placeholder="label 文本" bindinput="setLabel" data-name="content" data-type="0"/>
+            </view>
+          </view>
+
+          <view class="control-section">            
+            <view class="cells-column">
+              <text>color</text>
+              <input placeholder="label 文本颜色" bindinput="setLabel" data-name="color" data-type="0"/>
+            </view>
+          </view>
+
+          <view class="control-section">            
+            <view class="cells-column">
+              <text>fontSize</text>
+              <input placeholder="label 文字大小" type="digit" bindinput="setLabel" data-name="fontSize" data-type="0"/>
+            </view>
+          </view>
+
+          <view class="control-section">            
+            <view class="cells-column">
+              <text>anchorX</text>
+              <input placeholder="label的坐标x，原点是 marker 对应的经纬度" type="digit" bindinput="setLabel" data-name="anchorX" data-type="0"/>
+            </view>
+          </view>
+
+          <view class="control-section">            
+            <view class="cells-column">
+              <text>anchorY</text>
+              <input placeholder="label的坐标y，原点是 marker 对应的经纬度" type="digit" bindinput="setLabel" data-name="anchorY" data-type="0"/>
+            </view>
+          </view>
+
+          <view class="control-section">            
+            <view class="cells-column">
+              <text>borderRadius</text>
+              <input placeholder="label 边框圆角" type="digit" bindinput="setLabel" data-name="borderRadius" data-type="0"/>
+            </view>
+          </view>
+
+          <view class="control-section">            
+            <view class="cells-column">
+              <text>bgColor</text>
+              <input placeholder="label 背景色" bindinput="setLabel" data-name="bgColor" data-type="0"/>
+            </view>
+          </view>
+
+          <view class="control-section">            
+            <view class="cells-column">
+              <text>padding</text>
+              <input placeholder="label 文本边缘留白" type="digit" bindinput="setLabel" data-name="padding" data-type="0"/>
+            </view>
+          </view>
+
+          <view class="control-section">            
+            <view class="cells-column">
+              <text>textAlign</text>
+              <button bindtap="setLabel" data-name="textAlign" data-value="left" data-type="0">left</button>
+              <button bindtap="setLabel" data-name="textAlign" data-value="right" data-type="0">right</button>
+              <button bindtap="setLabel" data-name="textAlign" data-value="center" data-type="0">center</button>
+            </view>
+          </view>
+        </view>
+
+      </view>
+
+      <view>polyline</view>
+      <button bindtap="togglePolyline">
+        {{polyline.length ? '清除' : '绘制'}}路线
+      </button>
+
+      <view qa:if="{{polyline.length}}">
+        <view class="main-section">
+          <view>设置 polyline 线的颜色</view>
+          <view>
+            <view>
+              <input placeholder="十六进制" bindinput="setListProperty" data-property="polyline" data-name="color"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置 polyline 线的宽度</view>
+          <view>
+            <view>
+              <input placeholder="请输入数字" type="digit" bindinput="setListProperty" data-property="polyline" data-name="width"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置 polyline 箭头图标</view>
+          <view>
+            <view>
+              <input placeholder="在 arrowLine 为 true 时生效" bindinput="setListProperty" data-property="polyline" data-name="arrowIconPath"/>
+            </view>
+          </view>
+        </view>
+
+        <button bindtap="setListProperty" data-property="polyline" data-name="arrowLine" data-value="{{!polyline[0].arrowLine}}">
+          {{polyline[0].arrowLine ? '设置 polyline 为不带箭头的线' : '设置 polyline 为带箭头的线'}}
+        </button>
+        <button bindtap="setListProperty" data-property="polyline" data-name="dottedLine" data-value="{{!polyline[0].dottedLine}}">
+          {{polyline[0].dottedLine ? '设置 polyline 为实线' : '设置 polyline 为虚线'}}
+        </button>
+      </view>
+
+      <view>polygons</view>
+      <button bindtap="togglePolygons">
+        {{ polygons.length ? '清除' : '绘制' }}多边形
+      </button>
+
+      <view qa:if="{{polygons.length}}">
+        <view class="main-section">
+          <view>设置 polygon 描边的宽度</view>
+          <view>
+            <view>
+              <input placeholder="请输入数字" type="digit" bindinput="setListProperty" data-property="polygons" data-name="strokeWidth"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置 polygon 描边的颜色</view>
+          <view>
+            <view>
+              <input placeholder="十六进制" bindinput="setListProperty" data-property="polygons" data-name="strokeColor"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置 polygon 填充颜色</view>
+          <view>
+            <view>
+              <input placeholder="十六进制" bindinput="setListProperty" data-property="polygons" data-name="fillColor"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置第一个 polygon Z轴数值</view>
+          <view>
+            <view>
+              <input placeholder="请输入数字" type="number" bindinput="setListProperty" data-property="polygons" data-name="zIndex" data-type="0"/>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view>circles</view>
+      <button bindtap="toggleCircles">
+        {{ circles.length ? '清除' : '绘制' }}圆形
+      </button>
+
+      <view qa:if="{{circles.length}}">
+        <view class="main-section">
+          <view>设置 circle 纬度</view>
+          <view>
+            <view>
+              <input placeholder="浮点数，范围 -90 ~ 90" type="digit" bindinput="setListProperty" data-property="circles" data-name="latitude"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置 circle 经度</view>
+          <view>
+            <view>
+              <input placeholder="浮点数，范围 -180 ~ 180" type="digit" bindinput="setListProperty" data-property="circles" data-name="longitude"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置 circle 描边的宽度</view>
+          <view>
+            <view>
+              <input placeholder="请输入数字" type="digit" bindinput="setListProperty" data-property="circles" data-name="strokeWidth"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置 circle 半径</view>
+          <view>
+            <view>
+              <input placeholder="请输入数字" type="digit" bindinput="setListProperty" data-property="circles" data-name="radius"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置 circle 描边的颜色</view>
+          <view>
+            <view>
+              <input placeholder="十六进制" bindinput="setListProperty" data-property="circles" data-name="color"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置 circle 填充颜色</view>
+          <view>
+            <view>
+              <input placeholder="十六进制" bindinput="setListProperty" data-property="circles" data-name="fillColor"/>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view>controls</view>
+      <button bindtap="toggleControls">
+        {{ controls.length ? '清除' : '绘制' }}显示控件
+      </button>
+
+      <view qa:if="{{controls.length}}">
+        <view class="main-section">
+          <view>设置 control 图标</view>
+          <view>
+            <view>
+              <input placeholder="iconPath" bindinput="setListProperty" data-property="controls" data-name="iconPath"/>
+            </view>
+          </view>
+        </view>
+
+        <view class="main-section">
+          <view>设置 control 位置</view>
+          <view>
+            <view>
+              <input placeholder="距离左边界" bindinput="setControlsPosition" type="digit" data-name="left"/>
+              <input placeholder="距离上边界" bindinput="setControlsPosition" type="digit" data-name="top"/>
+            </view>
+            <view>
+              <input placeholder="控件宽度" bindinput="setControlsPosition" type="digit" data-name="width"/>
+              <input placeholder="控件高度" bindinput="setControlsPosition" type="digit" data-name="height"/>
+            </view>
+          </view>
+        </view>
+
+        <button bindtap="setListProperty" data-property="controls" data-name="clickable" data-value="{{!controls[0].clickable}}">
+          {{controls[0].clickable ? '设置 control 不可点击' : '设置 control 可点击'}}
+        </button>
+      </view>
+
+      <view>其他属性</view>
+      <button bindtap="toggleIncludePoints">
+        {{ includePoints.length ? '清除' : '添加' }}include-points
+      </button>
+      <button bindtap="toggleShowLocation">
+        {{ showLocation ? '隐藏' : '显示' }}带有方向的当前定位点
+      </button>
+      <button bindtap="toggleShowCompass">
+        {{ showCompass ? '隐藏' : '显示' }}指南针
+      </button>
+      <button bindtap="toggleOverlooking">
+        {{ enableOverlooking ? '关闭' : '开启' }}俯视
+      </button>
+      <button bindtap="toggleScroll">
+        {{ enableScroll ? '关闭' : '开启' }}拖动支持
+      </button>
+      <button bindtap="toggleZoom">
+        {{ enableZoom ? '关闭' : '开启' }}zoom
+      </button>
+      <button bindtap="toggleRotate">
+        {{ enableRotate ? '关闭' : '开启' }}旋转支持
+      </button>
+    </view>
+  </view>
+</view>

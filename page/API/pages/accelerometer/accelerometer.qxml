@@ -1,0 +1,19 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'Accelerometer', desc: '加速计'}}" />
+
+  <view class="main-body">
+    <view class="main-section main-section_center">
+      <view>x轴={{gAx}}</view>
+      <view>y轴={{gAy}}</view>
+      <view>z轴={{gAz}}</view>
+      <view class="controls">
+        <button bindtap="toggle" >{{ isListen ? '关闭监听' : '开启监听' }}</button>
+      </view>
+    </view>
+  </view>
+  
+  <template is="foot" />
+</view>

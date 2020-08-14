@@ -1,0 +1,15 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'Gyroscope', desc: '陀螺仪'}}" />
+  <view class="main-body">
+    <view class="main-section main-section_center">
+      <text>x={{gX}} y={{gY}} z={{gZ}}</text>
+      <view class="controls">
+        <button bindtap="toggle">{{ isListen ? '关闭陀螺仪监听' : '开启陀螺仪监听' }}</button>
+      </view>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

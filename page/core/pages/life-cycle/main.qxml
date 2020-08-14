@@ -1,0 +1,15 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: '页面生命周期'}}" />
+
+  <view class="main-body">
+    <view class="text-center">loadTime: {{loadTime}}</view>
+    <view class="text-center">showTime: {{showTime}}</view>
+    <view class="text-center">readyTime: {{readyTime}}</view>
+    <view class="text-center">loadOptions: {{options}}</view>
+  </view>
+
+  <template is="foot" />
+</view>

@@ -1,0 +1,5 @@
+<template name="foot">
+  <navigator class="main-foot" openType="switchTab" url="/page/component/index" hover-class="none">
+    <view>快应用示例</view>
+  </navigator>
+</template>

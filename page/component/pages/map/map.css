@@ -1,0 +1,28 @@
+
+
+.main-section{
+  margin-bottom: 20rpx;
+}
+.p-class {color: #2700d4;font-size: 12px;}
+.cells-column {display: flex;align-items: center;}
+.control-section {padding: 10px;margin-bottom:0 5px 25px;border: 1px dashed #666;}
+.control-section .title {color: #333;font-size: 22px;font-weight: bold;text-align: center;border: 1px solid #888;}
+.line-input button{
+  margin-left: 10rpx;
+}
+
+.main-section-title {
+  margin-bottom: 30rpx;
+}
+.navigator {
+  color: #1AAD19;
+  display: inline-block;
+}
+.hide{
+  display: none;
+}
+button.disabled, button.disabled:hover{
+  color: #ddd;
+  border: #eee;
+  cursor: not-allowed;
+}

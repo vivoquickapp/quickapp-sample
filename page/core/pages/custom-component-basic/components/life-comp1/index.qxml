@@ -1,0 +1,6 @@
+<view class="box">
+  <view>自定义组件: {{name}}</view>
+  <view>counter: {{counter}}</view>
+  <view><button bind:tap="doAction">doAction</button></view>
+  <life-comp2></life-comp2>
+</view>

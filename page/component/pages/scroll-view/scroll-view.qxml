@@ -1,0 +1,49 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'scroll-view'}}" />
+
+  <view class="main-body">
+    <view class="main-section">
+      <view class="main-section-title">
+        <text>Vertical Scroll\n纵向滚动</text>
+      </view>
+      <view class="main-section-spacing">
+        <scroll-view
+          scroll-y="true"
+          style="height: 300rpx;"
+          bindscrolltoupper="scrollToUpper"
+          bindscrolltolower="scrollToLower"
+          bindscroll="scroll"
+          scroll-into-view="{{scrollIntoView}}"
+          scroll-top="{{scrollTop}}"
+          scroll-with-animation
+        >
+          <view id="sample1" class="scroll-view-item sample-text-1"></view>
+          <view id="sample2" class="scroll-view-item sample-text-2"></view>
+          <view id="sample3" class="scroll-view-item sample-text-3"></view>
+        </scroll-view>
+      </view>
+      <view class="btn-wrap">
+        <button size="mini" bindtap="onTap">next</button>
+        <button size="mini" bindtap="onTapMove">move</button>
+        <button size="mini" bindtap="onTapMoveTop">scrollToTop</button>
+      </view>
+    </view>
+    <view class="main-section">
+      <view class="main-section-title">
+        <text>Horizontal Scroll\n横向滚动</text>
+      </view>
+      <view class="main-section-spacing">
+        <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+          <view id="sample4" class="scroll-view-item_H sample-text-1"></view>
+          <view id="sample5" class="scroll-view-item_H sample-text-2"></view>
+          <view id="sample6" class="scroll-view-item_H sample-text-3"></view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

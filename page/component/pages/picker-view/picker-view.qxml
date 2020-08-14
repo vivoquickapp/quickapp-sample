@@ -1,0 +1,47 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'picker-view'}}" />
+
+  <view class="main-body">
+    <view class="selected-date">{{year}}年{{month}}月{{day}}日{{isDaytime ? "白天" : "夜晚"}}</view>
+    <picker-view
+    mask-style="background-color: #999"
+    indicator-style="height: 50px;border:1px solid black;" 
+    mask-class="mask-class-test"
+    indicator-class="indicator-class-test"
+      style="width: 100%; height: 300px;"
+      value="{{value}}"
+      bindchange="bindChange"
+      bindpickstart ="bindpickstart"
+      bindpickend="bindpickend"
+    >
+      <picker-view-column>
+        <view qa:for="{{years}}" style="line-height: 50px; text-align: center;"
+          >{{item}}年</view
+        >
+      </picker-view-column>
+      <picker-view-column>
+        <view qa:for="{{months}}" style="line-height: 50px; text-align: center;"
+          >{{item}}月</view
+        >
+      </picker-view-column>
+      <picker-view-column>
+        <view qa:for="{{days}}" style="line-height: 50px; text-align: center;"
+          >{{item}}日</view
+        >
+      </picker-view-column>
+      <picker-view-column>
+        <view class="icon-container">
+          白天
+        </view>
+        <view class="icon-container">
+          夜晚
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+
+  <template is="foot" />
+</view>

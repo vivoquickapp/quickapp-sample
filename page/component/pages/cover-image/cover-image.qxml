@@ -1,0 +1,34 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view id="wrapper">
+  <template is="head" data="{{title: 'cover-image', desc: '覆盖在原生组件之上的图片视图。可覆盖的原生组件同cover-view，支持嵌套在cover-view里。'}}" />
+  <view class="main-body">
+    <view class="main-body-wrapper">
+      <cover-view class="image-content">
+        <cover-image
+          bindload="onBindLoad"
+          bindtap="onCoverImageTap"
+          class="cover-image"
+          src="https://wwwstatic.vivo.com.cn/vivoportal/files/image/brand/20200709/70a0fa9e95ee8f7abcb42769049b6200.jpg"
+        />
+      </cover-view>
+
+      <cover-view class="image-content">
+        <cover-image
+          binderror="onBindError"
+          class="cover-image uni-style"
+          src="https://www.lovejade.cn/logo.png.none"
+        />
+      </cover-view>
+
+      <cover-view>
+        <cover-image
+          class="uni-style special-style"
+          src="https://wwwstatic.vivo.com.cn/vivoportal/files/image/brand/20200709/70a0fa9e95ee8f7abcb42769049b6200.jpg"
+        />
+      </cover-view>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

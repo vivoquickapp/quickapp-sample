@@ -1,0 +1,22 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+<view class="container">
+  <template is="head" data="{{title: 'getAccountInfo'}}" />
+  <view class="main-body">
+    <view class="main-section">
+      <view class="btn-wrapper">
+        <button type="primary" bindtap="getProvider">获取服务提供商</button>
+        <button type="primary" bindtap="getAuthorizeCode">
+          authorize授权（授权码模式）
+        </button>
+        <button type="primary" bindtap="getAuthorizeToken">
+          authorize授权（简化模式）
+        </button>
+        <button type="primary" bindtap="getUserInfo">获取用户信息</button>
+        <button type="primary" bindtap="getPhoneNum">获取手机号码</button>
+        <button type="primary" bindtap="isAccountLogin">获取是否登录</button>
+      </view>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

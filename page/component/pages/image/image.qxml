@@ -1,0 +1,46 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'image'}}" />
+
+  <view class="main-body">
+    <view class="main-section main-section-gap">
+      <view class="main-section-title">Local Image</view>
+      <view class="main-section-ctn">
+        <image class="image" src="../../resources/pic/1.jpg" />
+      </view>
+    </view>
+    <view class="main-section main-section-gap">
+      <view class="main-section-title">Internet Image</view>
+      <view class="main-section-ctn">
+        <image class="image" src="{{imageUrl}}" />
+      </view>
+    </view>
+  </view>
+  <view class="main-section main-section-gap">
+    启用lazy-load 加载图片：<text class="red">{{isLazy}}</text>
+  </view>
+  <view class="page">
+    <view class="page__hd">
+      <text class="page__title">image</text>
+      <text class="page__desc">图片 mode 模式</text>
+    </view>
+    <view class="page__bd">
+      <view class="section section_gap" qa:for="{{array}}" qa:for-item="item">
+        <view class="section__title">{{item.text}}</view>
+        <view class="section__ctn">
+          <image
+            lazy-load="{{isLazy}}"
+            style="background-color: #eeeeee;"
+            mode="{{item.mode}}"
+            src="{{src}}"
+            binderror="imageError"
+            bindload="imageLoad"
+          ></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

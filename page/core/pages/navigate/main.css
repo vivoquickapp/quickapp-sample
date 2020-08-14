@@ -1,0 +1,11 @@
+.main-body {
+  padding: 12px;
+}
+.choose-frequence-text{
+  display: block;
+  margin: 10px;
+}
+.group{
+  display: inline;
+  margin: 10px;
+}

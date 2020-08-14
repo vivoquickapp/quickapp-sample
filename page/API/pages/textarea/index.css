@@ -1,0 +1,14 @@
+.textarea-page .textarea-wrp {
+  padding: 0 3%;
+  background-color: #fff;
+}
+.textarea-page .textarea-wrp .textarea {
+  width: 100%;
+  padding: 3% 0;
+}
+.textarea-page .p-class {
+  color: #ff0000;
+}
+.operating-log {
+  margin: 20rpx 10rpx 0 10rpx;
+}

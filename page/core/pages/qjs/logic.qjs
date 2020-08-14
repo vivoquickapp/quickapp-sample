@@ -1,0 +1,5 @@
+var tools = require("./tools.qjs");
+
+console.log(tools.FOO);
+console.log(tools.bar("logic.qjs"));
+console.log(tools.msg);

@@ -1,0 +1,64 @@
+<import src="../../../common/head.qxml" />
+<import src="../../../common/foot.qxml" />
+
+<view style="padding: 30px;">
+  <template is="head" data="{{title: 'cover-view', desc: '可覆盖的原生组件：map、video、canvas；cover-view 只支持嵌套 cover-view、cover-image，可在 cover-view 中使用 button。'}}" />
+
+  <cover-view class="flex-wrap" style="flex-direction:row;">
+    <cover-view class="flex-item sample-text-1"></cover-view>
+    <cover-view class="flex-item sample-text-2"></cover-view>
+    <cover-view class="flex-item sample-text-3"></cover-view>
+  </cover-view>
+
+  <cover-view style="background-color: #e2e2e2; height: 60px; margin: 20px 0; border: 1px solid #f60">只此一层 CoverView</cover-view>
+
+  <cover-view class="flex-wrap" style="flex-direction:row; margin-top: 30px;">
+    <cover-view class="flex-item sample-text-1"></cover-view>
+    <cover-image class="flex-item sample-text-2" src="https://wwwstatic.vivo.com.cn/vivoportal/files/image/brand/20200709/70a0fa9e95ee8f7abcb42769049b6200.jpg"></cover-image>
+  </cover-view>
+
+  <cover-view class="uni-style">
+    测试 cover-view 内部承载文本；
+    <button>天意怜幽草</button>
+    人间重晚晴
+  </cover-view>
+
+  <cover-view class="special-style uni-style">
+    测试 cover-view 内部承载文本；(携带指定样式)
+    <button>天意怜幽草</button>
+    人间重晚晴
+  </cover-view>
+
+  <cover-view class="outer" :scroll-top="100">
+    天净沙·秋思 (outer) @Tap
+    <cover-view class="inner">枯藤老树昏鸦，小桥流水人家(inner)</cover-view>
+    <cover-view class="inner">古道西风瘦马。 (inner)</cover-view>
+    <cover-view class="inner">夕阳西下，断肠人在天涯。(inner)</cover-view>
+  </cover-view>
+
+  <cover-view class="outer" :scroll-top="100">
+    天净沙·秋思 (outer) @Tap
+    <cover-view class="middle">
+      <cover-view class="inner">枯藤老树昏鸦，小桥流水人家(inner)</cover-view>
+      <cover-view class="inner">古道西风瘦马。 (inner)</cover-view>
+      <cover-view class="inner">夕阳西下，断肠人在天涯。(inner)</cover-view>
+    </cover-view>
+  </cover-view>
+
+  <map style="height: 300px; margin-top: 30px; margin-bottom: 30px;">
+    <cover-view class="flex-wrap" style="flex-direction:row;">
+      <cover-view class="flex-item sample-text-1"></cover-view>
+      <cover-view class="flex-item sample-text-2"></cover-view>
+      <cover-view class="flex-item sample-text-3"></cover-view>
+    </cover-view>
+  </map>
+
+  <video id="myVideo" src="{{src}}" controls>
+    <cover-view class="flex-wrap" style="flex-direction:row;">
+      <cover-view class="flex-item sample-text-1"></cover-view>
+      <cover-view class="flex-item sample-text-2"></cover-view>
+      <cover-view class="flex-item sample-text-3"></cover-view>
+    </cover-view>
+  </video>
+  <template is="foot" />
+</view>
